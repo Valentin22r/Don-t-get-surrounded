@@ -9,6 +9,10 @@ var life = 10
 func _ready() -> void:
 	makepath()
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_released("ui_left"):
+		death()
+
 func _physics_process(delta: float) -> void:
 	var dir = to_local(nav_agent.get_next_path_position()).normalized()
 	velocity = dir * speed
@@ -17,7 +21,7 @@ func _physics_process(delta: float) -> void:
 func makepath() ->void:
 	nav_agent.target_position = base.global_position
 
-func _on_timer_timeout():
+func _on_timer_timeout() -> void:
 	if (velocity.x <= 0):
 		$Sprite2D.flip_h = true
 	if (velocity.x > 0):
@@ -28,3 +32,14 @@ func _on_timer_timeout():
 			$Sprite2D.frame = 0
 		$Sprite2D.frame += 1
 	makepath()
+
+func death() -> void:
+	$TimerDeath.start()
+	$Sprite2D.hide()
+	$Death.show()
+	if ($Death.frame == 3):
+		queue_free()
+	pass
+
+func _on_timer_death_timeout() -> void:
+	$Death.frame += 1
