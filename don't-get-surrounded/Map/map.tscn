@@ -1,3 +1,38 @@
-[gd_scene format=3 uid="uid://waqt1sgk861m"]
+[gd_scene load_steps=5 format=3 uid="uid://waqt1sgk861m"]
+
+[ext_resource type="PackedScene" uid="uid://bm0sc8rpmwfly" path="res://Base/Base.tscn" id="1_vb7m2"]
+[ext_resource type="PackedScene" uid="uid://ckadol63ck6vq" path="res://enemy/enemy.tscn" id="2_xs17b"]
+[ext_resource type="Script" path="res://Map/spawner.gd" id="3_6u2hr"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_qgd1f"]
+vertices = PackedVector2Array(732.031, 436.953, -401.039, 432.039, -403, 19.1875, -399.18, -187.023, 733.961, -189.969)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-409, -197, -413, 19, -411, 442, 742, 447, 744, -200)])
 
 [node name="Map" type="Node2D"]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_qgd1f")
+
+[node name="Base" parent="." instance=ExtResource("1_vb7m2")]
+position = Vector2(1, 4)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-1, 12)
+zoom = Vector2(5, 5)
+
+[node name="Enemy" parent="." node_paths=PackedStringArray("base") instance=ExtResource("2_xs17b")]
+position = Vector2(441, 314)
+base = NodePath("../Base")
+
+[node name="Enemy2" parent="." node_paths=PackedStringArray("base") instance=ExtResource("2_xs17b")]
+position = Vector2(29, 207)
+base = NodePath("../Base")
+
+[node name="Spawner" type="Node" parent="."]
+script = ExtResource("3_6u2hr")
+
+[node name="Timer" type="Timer" parent="Spawner"]
+autostart = true
+
+[connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_timer_timeout"]

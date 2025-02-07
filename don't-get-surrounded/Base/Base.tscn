@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bm0sc8rpmwfly"]
+
+[ext_resource type="Script" path="res://Base/base.gd" id="1_t5a4i"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_bgysq"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_g0wqv"]
+
+[node name="Base" type="Node2D"]
+script = ExtResource("1_t5a4i")
+
+[node name="sprite" type="MeshInstance2D" parent="."]
+self_modulate = Color(0, 1, 1, 1)
+scale = Vector2(20, 20)
+mesh = SubResource("QuadMesh_bgysq")
+texture = SubResource("ViewportTexture_g0wqv")

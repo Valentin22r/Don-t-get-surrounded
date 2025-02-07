@@ -1,11 +1,29 @@
-extends Node
+extends CharacterBody2D
 
+var speed = 30
+var life = 10
 
-# Called when the node enters the scene tree for the first time.
+@export var base: Node2D
+@onready var nav_agent:= $NavigationAgent2D as NavigationAgent2D
+
 func _ready() -> void:
-	pass # Replace with function body.
+	makepath()
 
+func _physics_process(delta: float) -> void:
+	var dir = to_local(nav_agent.get_next_path_position()).normalized()
+	velocity = dir * speed
+	move_and_slide()
+	
+func makepath() ->void:
+	nav_agent.target_position = base.global_position
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_timer_timeout():
+	if (velocity.x <= 0):
+		$Sprite2D.flip_h = true
+	if (velocity.x > 0):
+		$Sprite2D.flip_h = false
+	print($Sprite2D.frame)
+	if ($Sprite2D.frame >= 5):
+		$Sprite2D.frame = 0
+	$Sprite2D.frame += 1
+	makepath()
