@@ -22,8 +22,9 @@ func _on_timer_timeout():
 		$Sprite2D.flip_h = true
 	if (velocity.x > 0):
 		$Sprite2D.flip_h = false
-	print($Sprite2D.frame)
-	if ($Sprite2D.frame >= 5):
-		$Sprite2D.frame = 0
-	$Sprite2D.frame += 1
+	if (life > 0):
+		print($Sprite2D.frame)
+		if ($Sprite2D.frame >= 5):
+			$Sprite2D.frame = 0
+		$Sprite2D.frame += 1
 	makepath()
