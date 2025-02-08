@@ -4,6 +4,7 @@ var enemy_scene = preload("res://enemy/enemy.tscn")
 
 func _on_timer_timeout() -> void:
 	var enemy = enemy_scene.instantiate()
+	enemy.add_to_group("enemy")
 	enemy.position.x = randi_range(0, 100)
 	enemy.position.y = randi_range(0, 100)
 	enemy.base = get_node("../Base")

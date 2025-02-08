@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://qkm5wwp2rcmx"]
+[gd_scene load_steps=7 format=3 uid="uid://qkm5wwp2rcmx"]
 
 [ext_resource type="Script" path="res://turret/player.gd" id="1_w7i2s"]
 [ext_resource type="Texture2D" uid="uid://c6babccsrv1px" path="res://asset/player.png" id="3_aoqmg"]
+[ext_resource type="Script" path="res://turret/hud.gd" id="3_koc7y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dc6b2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_56av3"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_saqhp"]
 
 [node name="test_mob" type="CharacterBody2D"]
 script = ExtResource("1_w7i2s")
@@ -21,9 +24,80 @@ shape = SubResource("RectangleShape2D_dc6b2")
 shape = SubResource("RectangleShape2D_56av3")
 
 [node name="Player" type="Sprite2D" parent="."]
-rotation = 1.5708
 scale = Vector2(0.034398, 0.0363636)
 texture = ExtResource("3_aoqmg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
+
+[node name="Hud" type="Node2D" parent="."]
+script = ExtResource("3_koc7y")
+
+[node name="bloc2" type="MeshInstance2D" parent="Hud"]
+modulate = Color(0.306923, 0.306923, 0.306923, 1)
+position = Vector2(-242.375, -125.625)
+scale = Vector2(91.25, 72.75)
+mesh = SubResource("QuadMesh_saqhp")
+
+[node name="bloc" type="MeshInstance2D" parent="Hud"]
+modulate = Color(0.435192, 0.435192, 0.435192, 1)
+position = Vector2(-242.125, -125.375)
+scale = Vector2(87.25, 67.75)
+mesh = SubResource("QuadMesh_saqhp")
+
+[node name="production" type="RichTextLabel" parent="Hud"]
+offset_left = -282.5
+offset_top = -156.5
+offset_right = -192.5
+offset_bottom = -133.5
+theme_override_font_sizes/normal_font_size = 10
+text = "Production"
+
+[node name="amelioration" type="RichTextLabel" parent="Hud"]
+offset_left = -282.5
+offset_top = -140.5
+offset_right = -192.5
+offset_bottom = -117.5
+theme_override_font_sizes/normal_font_size = 10
+text = "upgrade: "
+
+[node name="power" type="RichTextLabel" parent="Hud"]
+offset_left = -283.5
+offset_top = -126.5
+offset_right = -193.5
+offset_bottom = -103.5
+theme_override_font_sizes/normal_font_size = 10
+text = "power: "
+
+[node name="ammo" type="RichTextLabel" parent="Hud"]
+offset_left = -283.5
+offset_top = -110.5
+offset_right = -193.5
+offset_bottom = -87.5
+theme_override_font_sizes/normal_font_size = 10
+text = "ammo: "
+
+[node name="amelioration_nb" type="RichTextLabel" parent="Hud"]
+offset_left = -232.75
+offset_top = -139.25
+offset_right = -142.75
+offset_bottom = -116.25
+theme_override_font_sizes/normal_font_size = 10
+text = "0
+"
+
+[node name="power_nb" type="RichTextLabel" parent="Hud"]
+offset_left = -233.75
+offset_top = -125.25
+offset_right = -143.75
+offset_bottom = -102.25
+theme_override_font_sizes/normal_font_size = 10
+text = "0"
+
+[node name="ammo_nb" type="RichTextLabel" parent="Hud"]
+offset_left = -232.75
+offset_top = -110.25
+offset_right = -142.75
+offset_bottom = -87.25
+theme_override_font_sizes/normal_font_size = 10
+text = "0"

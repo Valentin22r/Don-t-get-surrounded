@@ -1,12 +1,12 @@
 extends Node2D
 @export var speed: int
 var life = -1
+
 func _ready():
-	add_to_group("player")
-	pass;
+	$Area2D.add_to_group("player")
 
 func _process(delta):
-	look_at(get_global_mouse_position())
+	$Player.look_at(get_global_mouse_position())
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("test_right"):
 		velocity.x += 1
