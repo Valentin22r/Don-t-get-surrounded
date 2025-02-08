@@ -24,3 +24,6 @@ shape = SubResource("RectangleShape2D_56av3")
 rotation = 1.5708
 scale = Vector2(0.034398, 0.0363636)
 texture = ExtResource("3_aoqmg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
