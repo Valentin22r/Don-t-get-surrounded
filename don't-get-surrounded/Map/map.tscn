@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Map/spawner.gd" id="3_6u2hr"]
 [ext_resource type="PackedScene" uid="uid://c3qwlyxxcjoy2" path="res://turret/turret.tscn" id="4_48m3y"]
 [ext_resource type="PackedScene" uid="uid://d0apd7evulb3c" path="res://drone/drone_=>.tscn" id="5_hpf4u"]
-[ext_resource type="PackedScene" uid="uid://qkm5wwp2rcmx" path="res://turret/test_mob.tscn" id="6_c1trm"]
+[ext_resource type="PackedScene" uid="uid://qkm5wwp2rcmx" path="res://turret/player.tscn" id="6_c1trm"]
 [ext_resource type="PackedScene" uid="uid://brmnx1pbw61aa" path="res://buildings/usine.tscn" id="7_4iyt2"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_qgd1f"]
