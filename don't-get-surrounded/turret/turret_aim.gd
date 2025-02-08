@@ -27,7 +27,6 @@ func _process(delta):
 
 func shoot():
 	var random_shoot = randf_range(-1.52, -1.68)
-	print("Fire !", timer.is_stopped())
 	var instance_bullet = bullet.instantiate()
 	instance_bullet._direction = rotation + random_shoot;
 	instance_bullet._origin = global_position;
@@ -40,7 +39,6 @@ func shoot():
 func _on_detection_area_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	if (area.is_in_group("bullets")):
 		return;
-	print("new target")
 	target_array.append(area);
 	is_target_shootable = true;
 	pass # Replace with function body.
