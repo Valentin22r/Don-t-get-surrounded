@@ -8,6 +8,7 @@ signal DepartureChanged
 
 var workspeed: int = 0;
 var ship_departure: int = 1800;
+var act_debt: int = 0;
 var is_player_around: bool = false;
 
 var hp: int = 100
@@ -23,7 +24,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if (Input.is_action_just_released("Interact") && is_player_around):
-		ship_departure += 1;
+		act_debt += 100;
+		DepartureChanged.emit()
 		pass;
 	pass
 
@@ -41,6 +43,6 @@ func _on_area_2d_body_exited(body):
 		is_player_around = false;
 
 func _on_timer_timeout():
-	ship_departure += (1 + (0.1 * workspeed));
+	act_debt += (1 + (0.1 * workspeed));
 	DepartureChanged.emit()
 	pass # Replace with function body.

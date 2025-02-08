@@ -19,6 +19,11 @@ config/icon="res://asset/icon.svg"
 
 GlobalData="*res://global_data.gd"
 
+[display]
+
+window/size/mode=3
+window/stretch/mode="viewport"
+
 [input]
 
 test_left={

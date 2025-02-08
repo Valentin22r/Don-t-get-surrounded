@@ -11,26 +11,31 @@
 [sub_resource type="QuadMesh" id="QuadMesh_saqhp"]
 
 [node name="test_mob" type="CharacterBody2D"]
+scale = Vector2(1.185, 1.185)
 script = ExtResource("1_w7i2s")
-speed = 50
+speed = 115
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0.135, 0.335)
+scale = Vector2(1.615, 1.615)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_dc6b2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.63, 1.63)
 shape = SubResource("RectangleShape2D_56av3")
 
 [node name="Player" type="Sprite2D" parent="."]
-scale = Vector2(0.034398, 0.0363636)
+scale = Vector2(0.084, 0.089)
 texture = ExtResource("3_aoqmg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(1.55338, 1.69838)
 zoom = Vector2(2, 2)
 
 [node name="Hud" type="Node2D" parent="."]
+position = Vector2(49.789, 29.5359)
 script = ExtResource("3_koc7y")
 
 [node name="bloc2" type="MeshInstance2D" parent="Hud"]

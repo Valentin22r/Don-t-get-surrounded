@@ -3,6 +3,7 @@ extends Node2D
 var life = -1
 
 func _ready():
+	add_to_group("player")
 	$Area2D.add_to_group("player")
 
 func _process(delta):

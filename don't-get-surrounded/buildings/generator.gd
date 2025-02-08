@@ -13,6 +13,7 @@ var life: int = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	is_player_around = false
 	generate = 1
 	add_to_group("building")
 	pass # Replace with function body.

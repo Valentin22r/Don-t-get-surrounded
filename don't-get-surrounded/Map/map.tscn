@@ -1,38 +1,37 @@
-[gd_scene load_steps=10 format=3 uid="uid://waqt1sgk861m"]
+[gd_scene load_steps=12 format=3 uid="uid://waqt1sgk861m"]
 
 [ext_resource type="PackedScene" uid="uid://bm0sc8rpmwfly" path="res://Base/Base.tscn" id="1_vb7m2"]
-[ext_resource type="PackedScene" uid="uid://ckadol63ck6vq" path="res://enemy/enemy.tscn" id="2_xs17b"]
 [ext_resource type="Script" path="res://Map/spawner.gd" id="3_6u2hr"]
 [ext_resource type="PackedScene" uid="uid://c3qwlyxxcjoy2" path="res://turret/turret.tscn" id="4_48m3y"]
 [ext_resource type="PackedScene" uid="uid://d0apd7evulb3c" path="res://drone/drone_=>.tscn" id="5_hpf4u"]
 [ext_resource type="PackedScene" uid="uid://qkm5wwp2rcmx" path="res://turret/player.tscn" id="6_c1trm"]
 [ext_resource type="PackedScene" uid="uid://brmnx1pbw61aa" path="res://buildings/usine.tscn" id="7_4iyt2"]
 [ext_resource type="Texture2D" uid="uid://db2uskkg72xk4" path="res://asset/map.png" id="8_cehod"]
+[ext_resource type="PackedScene" uid="uid://cx38ynxx7ba30" path="res://buildings/generator.tscn" id="9_tdujp"]
+[ext_resource type="PackedScene" uid="uid://drymjmt1kmu3q" path="res://Wall/Wall.tscn" id="10_lkt6x"]
+[ext_resource type="PackedScene" uid="uid://6njnwgjsdibq" path="res://buildings/ship_launchpad.tscn" id="10_yosqr"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_qgd1f"]
-vertices = PackedVector2Array(732.031, 436.953, -401.039, 432.039, -403, 19.1875, -399.18, -187.023, 733.961, -189.969)
+vertices = PackedVector2Array(2355.42, -2215.48, 2525.42, 1094.21, -1335.46, 815.727, -1206.28, -1472.74, 279.5, -2570.42)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-409, -197, -413, 19, -411, 442, 742, 447, 744, -200)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(277, -2581, -1216, -1478, -1346, 825, 2536, 1105, 2365, -2224)])
 
 [node name="Map" type="Node2D"]
 
-[node name="Map" type="Sprite2D" parent="."]
-position = Vector2(0, -2)
+[node name="SpriteMap" type="Sprite2D" parent="."]
+visible = false
+show_behind_parent = true
+position = Vector2(-13, -9.99998)
+scale = Vector2(2.81747, 2.50781)
 texture = ExtResource("8_cehod")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
+position = Vector2(-458, 881)
 navigation_polygon = SubResource("NavigationPolygon_qgd1f")
 
 [node name="Base" parent="." instance=ExtResource("1_vb7m2")]
 position = Vector2(-9, -16)
-
-[node name="Enemy" parent="." node_paths=PackedStringArray("base") instance=ExtResource("2_xs17b")]
-position = Vector2(441, 314)
-base = NodePath("../Base")
-
-[node name="Enemy2" parent="." node_paths=PackedStringArray("base") instance=ExtResource("2_xs17b")]
-position = Vector2(29, 207)
-base = NodePath("../Base")
 
 [node name="Spawner" type="Node" parent="."]
 script = ExtResource("3_6u2hr")
@@ -41,18 +40,107 @@ script = ExtResource("3_6u2hr")
 autostart = true
 
 [node name="turret" parent="." instance=ExtResource("4_48m3y")]
-position = Vector2(52, -3)
-scale = Vector2(0.1, 0.1)
+position = Vector2(711, -300)
+rotation = -0.436332
 
 [node name="Drone =>" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_hpf4u")]
-position = Vector2(-51, 14)
+position = Vector2(-28, 198)
 player = NodePath("../test_mob")
 
-[node name="test_mob" parent="." instance=ExtResource("6_c1trm")]
-position = Vector2(9, 40)
+[node name="Usine4" parent="." instance=ExtResource("7_4iyt2")]
+position = Vector2(350, 350)
+
+[node name="Usine3" parent="." instance=ExtResource("7_4iyt2")]
+position = Vector2(-350, -350)
+
+[node name="Usine2" parent="." instance=ExtResource("7_4iyt2")]
+position = Vector2(350, -350)
 
 [node name="Usine" parent="." instance=ExtResource("7_4iyt2")]
-position = Vector2(-12, 38)
-scale = Vector2(0.545, 0.545)
+position = Vector2(-350, 350)
+
+[node name="generator4" parent="." instance=ExtResource("9_tdujp")]
+position = Vector2(-550, 0)
+
+[node name="generator3" parent="." instance=ExtResource("9_tdujp")]
+position = Vector2(0, 550)
+
+[node name="generator2" parent="." instance=ExtResource("9_tdujp")]
+position = Vector2(0, -550)
+
+[node name="generator" parent="." instance=ExtResource("9_tdujp")]
+position = Vector2(550, 0)
+
+[node name="Ship" parent="." instance=ExtResource("10_yosqr")]
+
+[node name="test_mob" parent="." instance=ExtResource("6_c1trm")]
+position = Vector2(25, 221)
+
+[node name="Wall" parent="." instance=ExtResource("10_lkt6x")]
+position = Vector2(767, -6)
+scale = Vector2(1, 40)
+
+[node name="Wall2" parent="." instance=ExtResource("10_lkt6x")]
+position = Vector2(544, -546)
+rotation = -0.785398
+scale = Vector2(1, 40)
+
+[node name="Wall3" parent="." instance=ExtResource("10_lkt6x")]
+position = Vector2(1, -772)
+rotation = -1.5708
+scale = Vector2(1, 40)
+
+[node name="Wall4" parent="." instance=ExtResource("10_lkt6x")]
+position = Vector2(-542, -548)
+rotation = 3.92699
+scale = Vector2(1, 40)
+
+[node name="Wall5" parent="." instance=ExtResource("10_lkt6x")]
+position = Vector2(545, 536)
+rotation = 0.785398
+scale = Vector2(1, 40)
+
+[node name="Wall6" parent="." instance=ExtResource("10_lkt6x")]
+position = Vector2(1, 762)
+rotation = 1.5708
+scale = Vector2(1, 40)
+
+[node name="Wall7" parent="." instance=ExtResource("10_lkt6x")]
+position = Vector2(-544, 540)
+rotation = 2.35619
+scale = Vector2(1, 40)
+
+[node name="Wall8" parent="." instance=ExtResource("10_lkt6x")]
+position = Vector2(-769, -1)
+rotation = 3.14159
+scale = Vector2(1, 40)
+
+[node name="turret2" parent="." instance=ExtResource("4_48m3y")]
+position = Vector2(711, 290)
+rotation = -0.436332
+
+[node name="turret3" parent="." instance=ExtResource("4_48m3y")]
+position = Vector2(290, -715)
+rotation = -0.436332
+
+[node name="turret4" parent="." instance=ExtResource("4_48m3y")]
+position = Vector2(-300, -713)
+rotation = -0.436332
+
+[node name="turret5" parent="." instance=ExtResource("4_48m3y")]
+position = Vector2(-713, -298)
+rotation = -0.436332
+
+[node name="turret6" parent="." instance=ExtResource("4_48m3y")]
+position = Vector2(-715, 293)
+rotation = -0.436332
+
+[node name="turret7" parent="." instance=ExtResource("4_48m3y")]
+position = Vector2(-293, 710)
+rotation = -0.436332
+
+[node name="turret8" parent="." instance=ExtResource("4_48m3y")]
+position = Vector2(300, 702)
+rotation = -0.436332
 
 [connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_timer_timeout"]

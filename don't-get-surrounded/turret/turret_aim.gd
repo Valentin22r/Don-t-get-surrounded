@@ -26,13 +26,14 @@ func _process(delta):
 	pass
 
 func shoot():
-	var random_shoot = randf_range(-1.52, -1.68)
+#	var random_shoot = randf_range(-1.52, -1.68)
+	var random_shoot = randf_range(-1.92, -2.08)
 	var instance_bullet = bullet.instantiate()
 	instance_bullet._direction = rotation + random_shoot;
 	instance_bullet._origin = global_position;
-	instance_bullet._rotation = (rotation + random_shoot) - 3;
+	instance_bullet._rotation = (rotation + random_shoot) - 3.15;
 	instance_bullet._damage = weapon_damage;
-	instance_bullet._zindex = z_index - 1;
+	instance_bullet._zindex = z_index + 1;
 	map.add_child(instance_bullet)
 	pass;
 
@@ -57,5 +58,7 @@ func _on_timer_timeout():
 	if (!is_target_shootable):
 		timer.stop;
 		return;
-	shoot();
+	if (GlobalData.ammo > 0):
+		GlobalData.ammo -= 1;
+		shoot();
 	pass # Replace with function body.

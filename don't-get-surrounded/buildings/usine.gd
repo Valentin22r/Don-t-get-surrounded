@@ -31,10 +31,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if (Input.is_action_just_released("Interact") && is_player_around):
+		print("switching constuction")
 		_resource = (_resource + 1) % 3
 		construction_time = (_resource + 1) * 15
 	if (Input.is_action_just_released("Interact")):
-		print("Drones: ", workspeed, "\nconstruction is at ", ongoing_construction, " out of ", construction_time)
 		pass;
 	pass
 

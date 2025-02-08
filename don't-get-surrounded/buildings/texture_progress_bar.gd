@@ -10,4 +10,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func update():
-	value = ship.ship_departure / 1800;
+	value = (int)((ship.act_debt * 100) / 1800);
