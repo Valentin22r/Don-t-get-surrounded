@@ -34,7 +34,6 @@ func _on_timer_timeout() -> void:
 		else:
 			$Sprite2D.flip_v = true
 		if (life > 0):
-			print($Sprite2D.frame)
 			if ($Sprite2D.frame >= 5):
 				$Sprite2D.frame = 0
 			$Sprite2D.frame += 1
