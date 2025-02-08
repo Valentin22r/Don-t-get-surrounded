@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://6njnwgjsdibq"]
+
+[ext_resource type="Texture2D" uid="uid://ux3j3yqxjtst" path="res://sprites/sprite_launchpad2.png" id="1_7qh45"]
+[ext_resource type="Script" path="res://buildings/ship_launchpad.gd" id="1_fu1e5"]
+[ext_resource type="Texture2D" uid="uid://x7gc4prmka4x" path="res://sprites/progression_top_bar.png" id="2_n872c"]
+[ext_resource type="Texture2D" uid="uid://ts4d5aqqbhea" path="res://sprites/progression_bottom_bar.png" id="2_twc3r"]
+[ext_resource type="Texture2D" uid="uid://b41b17w8quulq" path="res://sprites/progression_bar.png" id="3_7o5v0"]
+[ext_resource type="Script" path="res://buildings/texture_progress_bar.gd" id="5_mrsyj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_el4x0"]
+size = Vector2(257, 255)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gsfm"]
+size = Vector2(323, 296)
+
+[node name="Ship" type="StaticBody2D"]
+script = ExtResource("1_fu1e5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_el4x0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7qh45")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_4gsfm")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control" node_paths=PackedStringArray("ship")]
+layout_mode = 0
+offset_left = 73.0
+offset_top = -128.0
+offset_right = 105.0
+offset_bottom = 128.0
+fill_mode = 3
+texture_under = ExtResource("2_twc3r")
+texture_over = ExtResource("2_n872c")
+texture_progress = ExtResource("3_7o5v0")
+script = ExtResource("5_mrsyj")
+ship = NodePath("../..")
+metadata/_edit_use_anchors_ = true

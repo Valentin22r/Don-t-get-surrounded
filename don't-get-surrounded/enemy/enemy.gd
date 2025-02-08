@@ -10,6 +10,7 @@ var target: Array
 @onready var nav_agent:= $NavigationAgent2D as NavigationAgent2D
 
 func _ready() -> void:
+	$Area2D.add_to_group("enemy")
 	makepath()
 
 func _process(delta: float) -> void:
@@ -60,8 +61,5 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		target.append(area)
 
 func _on_timer_attack_timeout() -> void:
-	if (target.is_empty() == true):
-		print("HERE")
 	if (target.is_empty() == false):
-		print("HERE1")
 		target[0].hp -= 1

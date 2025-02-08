@@ -1,27 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://brmnx1pbw61aa"]
+[gd_scene load_steps=5 format=3 uid="uid://cx38ynxx7ba30"]
 
-[ext_resource type="Script" path="res://buildings/usine.gd" id="1_awu37"]
-[ext_resource type="Texture2D" uid="uid://boyi6hivb0s4" path="res://sprites/sprite_usine.png" id="2_43qri"]
+[ext_resource type="Script" path="res://buildings/generator.gd" id="1_iiyhh"]
+[ext_resource type="Texture2D" uid="uid://bbn1sfkfb1gcf" path="res://sprites/sprite_generator.png" id="2_7awi3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_os4bc"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fx2lb"]
 size = Vector2(32, 32)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ifybw"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ubx3b"]
 radius = 47.1699
 
-[node name="usine" type="StaticBody2D"]
-script = ExtResource("1_awu37")
+[node name="generator" type="StaticBody2D"]
+script = ExtResource("1_iiyhh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_os4bc")
+shape = SubResource("RectangleShape2D_fx2lb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_43qri")
+texture = ExtResource("2_7awi3")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_ifybw")
+shape = SubResource("CircleShape2D_ubx3b")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

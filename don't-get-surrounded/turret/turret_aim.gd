@@ -1,7 +1,7 @@
 extends MeshInstance2D
 
 @onready var map = get_tree().get_root().get_node("Map")
-@onready var bullet = load("res://turret/bullet.tscn");
+@onready var bullet = preload("res://turret/bullet.tscn");
 
 @export var weapon_damage: int
 @export var weapon_reload: float
@@ -30,14 +30,14 @@ func shoot():
 	var instance_bullet = bullet.instantiate()
 	instance_bullet._direction = rotation + random_shoot;
 	instance_bullet._origin = global_position;
-	instance_bullet._rotation = rotation + random_shoot;
+	instance_bullet._rotation = (rotation + random_shoot) - 3;
 	instance_bullet._damage = weapon_damage;
 	instance_bullet._zindex = z_index - 1;
-	map.add_child.call_deferred(instance_bullet)
+	map.add_child(instance_bullet)
 	pass;
 
 func _on_detection_area_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
-	if (area.is_in_group("bullets") || area.is_in_group("player") || area.is_in_group("drone")):
+	if (!area.is_in_group("enemy")):
 		return;
 	target_array.append(area);
 	is_target_shootable = true;

@@ -1,4 +1,4 @@
-extends Node2D
+extends StaticBody2D
 
 @onready var map = get_tree().get_root().get_node("Map")
 @onready var drone = load("res://drone/drone_=>.tscn");
@@ -6,6 +6,8 @@ extends Node2D
 @export var timer: Timer
 
 var workspeed: int = 0;
+var hp: int = 100
+var life: int = 100
 
 enum RESOURCE {
 	BULLETS = 0,
@@ -22,7 +24,7 @@ var is_player_around: bool = false;
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	is_player_around = false
-	add_to_group("workplace")
+	add_to_group("building")
 	_resource = RESOURCE.DRONES;
 	pass # Replace with function body.
 
@@ -50,18 +52,15 @@ func _on_area_2d_body_exited(body):
 		is_player_around = false;
 
 func create_resource():
-	print(_resource, RESOURCE.DRONES)
 	if (_resource == RESOURCE.BULLETS):
 		GlobalData.ammo += 200;
 		return;
 	if (_resource == RESOURCE.DRONES):
 		var instance_drone = drone.instantiate()
-		print("Creating a drone !")
 		instance_drone.player = map.get_node("test_mob")
 		map.add_child.call_deferred(instance_drone)
 		return;
-	upgrade_count *= 0.95;
-
+	GlobalData.upgrade += 1;
 func _on_timer_timeout():
 	ongoing_construction += (1 + (0.1 * workspeed));
 	if (construction_time != 0 && ongoing_construction >= construction_time):

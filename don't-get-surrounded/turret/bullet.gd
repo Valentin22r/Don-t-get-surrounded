@@ -23,7 +23,9 @@ func _physics_process(delta):
 	move_and_slide();
 
 func _on_area_2d_body_entered(body):
-	if (body.life < 0):
+	if (body.is_in_group("enemy") == false):
 		return;
+	if (body.life < 0):
+		return
 	body.life -= _damage;
 	queue_free()

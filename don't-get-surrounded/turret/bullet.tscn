@@ -12,11 +12,12 @@ radius = 6.36
 height = 41.52
 
 [node name="Bullet" type="CharacterBody2D"]
-scale = Vector2(0.025, 0.025)
+rotation = 3.14159
+scale = Vector2(0.135, 0.135)
 collision_layer = 1536
 collision_mask = 1536
 script = ExtResource("1_7pfky")
-speed = 70
+speed = 585
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 1536

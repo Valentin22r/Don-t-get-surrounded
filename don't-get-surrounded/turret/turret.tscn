@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c3inciiv6kbsb" path="res://sprites/Sprite-turret.jpg" id="2_sr0ft"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_57eh5"]
-radius = 235.172
+radius = 86.0523
 
 [node name="turret" type="Node2D"]
 
