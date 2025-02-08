@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_kcc61"]
 [ext_resource type="Texture2D" uid="uid://yowykiv7llty" path="res://asset/image.png" id="2_86q3w"]
-[ext_resource type="Texture2D" uid="uid://c2oh213uwyye7" path="res://asset/image (2).png" id="3_62rrf"]
+[ext_resource type="Texture2D" uid="uid://cbfiopvd13m1i" path="res://asset/image (2).png" id="3_62rrf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyfy4"]
 size = Vector2(9, 20)
@@ -34,15 +34,15 @@ scale = Vector2(1.36, 1.2557)
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_jyfy4")
 
+[node name="TimerDeath" type="Timer" parent="."]
+wait_time = 0.08
+
 [node name="Death" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(-1, -2)
 scale = Vector2(0.228571, 0.325)
 texture = ExtResource("3_62rrf")
 hframes = 4
-
-[node name="TimerDeath" type="Timer" parent="."]
-wait_time = 0.08
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="TimerDeath" to="." method="_on_timer_death_timeout"]

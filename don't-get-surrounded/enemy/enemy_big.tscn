@@ -36,15 +36,15 @@ position = Vector2(-0.735294, -2.38911)
 scale = Vector2(1, 0.809658)
 shape = SubResource("RectangleShape2D_jyfy4")
 
+[node name="TimerDeath" type="Timer" parent="."]
+wait_time = 0.08
+
 [node name="Death" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(-2, -7)
 scale = Vector2(0.457143, 0.55)
 texture = ExtResource("3_ln4lr")
 hframes = 4
-
-[node name="TimerDeath" type="Timer" parent="."]
-wait_time = 0.08
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="TimerDeath" to="." method="_on_timer_death_timeout"]
