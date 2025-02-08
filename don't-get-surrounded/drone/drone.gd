@@ -4,9 +4,9 @@ var speed = 25
 var life = 30
 
 enum DroneState {
-	FOLLOWING,
-	WORKING,
-	SLEEPING
+	FOLLOWING = 2,
+	WORKING = 1,
+	SLEEPING = 0
 }
 
 @export var player: CharacterBody2D
@@ -15,7 +15,6 @@ enum DroneState {
 var State: DroneState = DroneState.WORKING
 
 func _ready():
-	makepath();
 	add_to_group("drone")
 
 func _physics_process(delta: float) -> void:

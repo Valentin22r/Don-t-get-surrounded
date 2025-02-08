@@ -1,7 +1,7 @@
 extends MeshInstance2D
 
 @onready var map = get_tree().get_root().get_node("Map")
-@onready var bullet = load("res://bullet.tscn");
+@onready var bullet = load("res://turret/bullet.tscn");
 
 @export var weapon_damage: int
 @export var weapon_reload: float
@@ -18,7 +18,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if (is_target_shootable):
+	if (!target_array.is_empty() && is_target_shootable):
 		look_at(target_array[0].global_position);
 		if(timer.paused):
 			shoot()
@@ -37,7 +37,7 @@ func shoot():
 	pass;
 
 func _on_detection_area_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
-	if (area.is_in_group("bullets")):
+	if (area.is_in_group("bullets") || area.is_in_group("player") || area.is_in_group("drone")):
 		return;
 	target_array.append(area);
 	is_target_shootable = true;
@@ -49,7 +49,7 @@ func _on_detection_area_area_shape_exited(area_rid, area, area_shape_index, loca
 		target_array.erase(area);
 		if (target_array.is_empty()):
 			is_target_shootable = false;
-	pass # Replace with function body.
+	pass
 
 
 func _on_timer_timeout():

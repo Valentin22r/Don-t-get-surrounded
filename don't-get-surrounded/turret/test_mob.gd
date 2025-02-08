@@ -2,6 +2,7 @@ extends Node2D
 @export var speed: int
 var life = -1
 func _ready():
+	add_to_group("player")
 	pass;
 
 func _process(delta):

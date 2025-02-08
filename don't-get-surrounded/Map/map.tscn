@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://waqt1sgk861m"]
+[gd_scene load_steps=9 format=3 uid="uid://waqt1sgk861m"]
 
 [ext_resource type="PackedScene" uid="uid://bm0sc8rpmwfly" path="res://Base/Base.tscn" id="1_vb7m2"]
 [ext_resource type="PackedScene" uid="uid://ckadol63ck6vq" path="res://enemy/enemy.tscn" id="2_xs17b"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c3qwlyxxcjoy2" path="res://turret/turret.tscn" id="4_48m3y"]
 [ext_resource type="PackedScene" uid="uid://d0apd7evulb3c" path="res://drone/drone_=>.tscn" id="5_hpf4u"]
 [ext_resource type="PackedScene" uid="uid://qkm5wwp2rcmx" path="res://turret/test_mob.tscn" id="6_c1trm"]
+[ext_resource type="PackedScene" uid="uid://brmnx1pbw61aa" path="res://buildings/usine.tscn" id="7_4iyt2"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_qgd1f"]
 vertices = PackedVector2Array(732.031, 436.953, -401.039, 432.039, -403, 19.1875, -399.18, -187.023, 733.961, -189.969)
@@ -18,7 +19,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-409, -197, -413, 19, -
 navigation_polygon = SubResource("NavigationPolygon_qgd1f")
 
 [node name="Base" parent="." instance=ExtResource("1_vb7m2")]
-position = Vector2(1, 4)
+position = Vector2(-9, -16)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-1, 12)
@@ -39,14 +40,18 @@ script = ExtResource("3_6u2hr")
 autostart = true
 
 [node name="turret" parent="." instance=ExtResource("4_48m3y")]
-position = Vector2(-4, 11)
+position = Vector2(52, -3)
 scale = Vector2(0.1, 0.1)
 
 [node name="Drone =>" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_hpf4u")]
-position = Vector2(-52, 39)
+position = Vector2(-51, 14)
 player = NodePath("../test_mob")
 
 [node name="test_mob" parent="." instance=ExtResource("6_c1trm")]
-position = Vector2(52, 34)
+position = Vector2(9, 40)
+
+[node name="Usine" parent="." instance=ExtResource("7_4iyt2")]
+position = Vector2(-12, 38)
+scale = Vector2(0.545, 0.545)
 
 [connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_timer_timeout"]
