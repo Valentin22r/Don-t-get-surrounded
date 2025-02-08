@@ -8,4 +8,3 @@ func _on_timer_timeout() -> void:
 	enemy.position.y = randi_range(0, 100)
 	enemy.base = get_node("../Base")
 	add_child(enemy)
-	print("SPAWN")
