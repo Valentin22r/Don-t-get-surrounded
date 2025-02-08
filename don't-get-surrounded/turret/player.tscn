@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://qkm5wwp2rcmx"]
 
-[ext_resource type="Texture2D" uid="uid://cmrak8ws582m3" path="res://sprites/sprite_test.jpg" id="1_tgm5p"]
-[ext_resource type="Script" path="res://turret/test_mob.gd" id="1_w7i2s"]
+[ext_resource type="Script" path="res://turret/player.gd" id="1_w7i2s"]
+[ext_resource type="Texture2D" uid="uid://c6babccsrv1px" path="res://asset/player.png" id="3_aoqmg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dc6b2"]
 
@@ -20,7 +20,7 @@ shape = SubResource("RectangleShape2D_dc6b2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_56av3")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-9.53674e-07, -9.53674e-07)
-scale = Vector2(0.4375, 0.40625)
-texture = ExtResource("1_tgm5p")
+[node name="Player" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.034398, 0.0363636)
+texture = ExtResource("3_aoqmg")

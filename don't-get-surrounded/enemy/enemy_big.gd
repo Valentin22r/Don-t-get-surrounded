@@ -1,8 +1,7 @@
 extends CharacterBody2D
 
-var speed = 15
+var speed = 35
 var life = GlobalData.big_enemy_life
-
 var death_animation_repetition = 2
 var death_time = 1
 
@@ -13,13 +12,14 @@ func _ready() -> void:
 	makepath()
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_released("ui_left"):
-		life = 0
 	if (life <= 0 and death_time >= 0):
 		death_time -= 1
 		death()
 
 func _physics_process(delta: float) -> void:
+	$Sprite2D.look_at(base.position)
+	$Area2D.look_at(base.position)
+	$CollisionShape2D.look_at(base.position)
 	var dir = to_local(nav_agent.get_next_path_position()).normalized()
 	velocity = dir * speed
 	move_and_slide()
@@ -29,15 +29,16 @@ func makepath() ->void:
 
 func _on_timer_timeout() -> void:
 	if (life > 0):
-		if (velocity.x <= 0):
-			$Sprite2D.flip_h = true
-		if (velocity.x > 0):
-			$Sprite2D.flip_h = false
+		if ($Sprite2D.flip_v == true):
+			$Sprite2D.flip_v = false
+		else:
+			$Sprite2D.flip_v = true
 		if (life > 0):
-			print($Sprite2D.frame)
 			if ($Sprite2D.frame >= 5):
 				$Sprite2D.frame = 0
 			$Sprite2D.frame += 1
+		else:
+			add_to_group("drone")
 		makepath()
 
 func death() -> void:

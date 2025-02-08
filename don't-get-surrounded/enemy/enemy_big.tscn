@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://ds418ppa2jpj5"]
 
 [ext_resource type="Script" path="res://enemy/enemy_big.gd" id="1_fgn6e"]
+[ext_resource type="Texture2D" uid="uid://b2lygbo3r07dk" path="res://asset/skeleton-move_14.png" id="2_5reo2"]
 [ext_resource type="Texture2D" uid="uid://cbfiopvd13m1i" path="res://asset/image (2).png" id="3_ln4lr"]
-[ext_resource type="Texture2D" uid="uid://c64wqrfmdqkps" path="res://asset/image (3).png" id="4_jveuf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyfy4"]
 size = Vector2(21, 28.0229)
@@ -22,10 +22,9 @@ wait_time = 0.08
 autostart = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(9.53674e-07, -3)
-scale = Vector2(0.4217, 0.376812)
-texture = ExtResource("4_jveuf")
-hframes = 6
+position = Vector2(9, -4)
+scale = Vector2(0.204861, 0.138264)
+texture = ExtResource("2_5reo2")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(1, 0)

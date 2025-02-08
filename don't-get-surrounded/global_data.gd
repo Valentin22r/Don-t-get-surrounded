@@ -1,7 +1,9 @@
 extends Node
 
 var time = 1800
+var base_life = 100
 
+var upgrade = 0
 var power = 0
 var ammo = 0
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://ckadol63ck6vq"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_kcc61"]
-[ext_resource type="Texture2D" uid="uid://yowykiv7llty" path="res://asset/image.png" id="2_86q3w"]
 [ext_resource type="Texture2D" uid="uid://cbfiopvd13m1i" path="res://asset/image (2).png" id="3_62rrf"]
+[ext_resource type="Texture2D" uid="uid://b2lygbo3r07dk" path="res://asset/skeleton-move_14.png" id="3_u0odi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyfy4"]
 size = Vector2(9, 20)
@@ -19,12 +19,6 @@ debug_enabled = true
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.08
 autostart = true
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(9.53674e-07, -3)
-scale = Vector2(0.4217, 0.376812)
-texture = ExtResource("2_86q3w")
-hframes = 6
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(1, 0)
@@ -43,6 +37,11 @@ position = Vector2(-1, -2)
 scale = Vector2(0.228571, 0.325)
 texture = ExtResource("3_62rrf")
 hframes = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, -1)
+scale = Vector2(0.111111, 0.104502)
+texture = ExtResource("3_u0odi")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="TimerDeath" to="." method="_on_timer_death_timeout"]
