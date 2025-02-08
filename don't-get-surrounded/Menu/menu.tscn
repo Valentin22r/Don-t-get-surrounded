@@ -21,6 +21,7 @@ theme_override_font_sizes/font_size = 40
 text = "PLAY"
 
 [node name="Option_button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 460.0
 offset_top = 490.0
 offset_right = 631.0
@@ -28,6 +29,7 @@ offset_bottom = 536.0
 text = "OPTION"
 
 [node name="Quit_button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 460.0
 offset_top = 554.0
 offset_right = 633.0

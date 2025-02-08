@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
-var speed = 30
-var life = GlobalData.basic_enemy_life
+var speed = 10
+var life = GlobalData.big_enemy_life
+
 var death_animation_repetition = 2
 var death_time = 1
 

@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://ds418ppa2jpj5"]
+
+[ext_resource type="Script" path="res://enemy/enemy_big.gd" id="1_fgn6e"]
+[ext_resource type="Texture2D" uid="uid://c2oh213uwyye7" path="res://asset/image (2).png" id="3_ln4lr"]
+[ext_resource type="Texture2D" uid="uid://cr4oucj7hd1fx" path="res://asset/image (3).png" id="4_jveuf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyfy4"]
+size = Vector2(21, 28.0229)
+
+[node name="Enemy_big" type="CharacterBody2D"]
+script = ExtResource("1_fgn6e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -3)
+shape = SubResource("RectangleShape2D_jyfy4")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.08
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, -3)
+scale = Vector2(0.4217, 0.376812)
+texture = ExtResource("4_jveuf")
+hframes = 6
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(1.36, 1.2557)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.735294, -2.38911)
+scale = Vector2(1, 0.809658)
+shape = SubResource("RectangleShape2D_jyfy4")
+
+[node name="Death" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-2, -7)
+scale = Vector2(0.457143, 0.55)
+texture = ExtResource("3_ln4lr")
+hframes = 4
+
+[node name="TimerDeath" type="Timer" parent="."]
+wait_time = 0.08
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TimerDeath" to="." method="_on_timer_death_timeout"]
