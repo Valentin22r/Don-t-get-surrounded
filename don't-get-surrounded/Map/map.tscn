@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://waqt1sgk861m"]
+[gd_scene load_steps=8 format=3 uid="uid://waqt1sgk861m"]
 
 [ext_resource type="PackedScene" uid="uid://bm0sc8rpmwfly" path="res://Base/Base.tscn" id="1_vb7m2"]
 [ext_resource type="PackedScene" uid="uid://ckadol63ck6vq" path="res://enemy/enemy.tscn" id="2_xs17b"]
 [ext_resource type="Script" path="res://Map/spawner.gd" id="3_6u2hr"]
+[ext_resource type="PackedScene" uid="uid://c3qwlyxxcjoy2" path="res://turret/turret.tscn" id="4_48m3y"]
+[ext_resource type="PackedScene" uid="uid://d0apd7evulb3c" path="res://drone/drone_=>.tscn" id="5_hpf4u"]
+[ext_resource type="PackedScene" uid="uid://qkm5wwp2rcmx" path="res://turret/test_mob.tscn" id="6_c1trm"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_qgd1f"]
 vertices = PackedVector2Array(732.031, 436.953, -401.039, 432.039, -403, 19.1875, -399.18, -187.023, 733.961, -189.969)
@@ -34,5 +37,16 @@ script = ExtResource("3_6u2hr")
 
 [node name="Timer" type="Timer" parent="Spawner"]
 autostart = true
+
+[node name="turret" parent="." instance=ExtResource("4_48m3y")]
+position = Vector2(-4, 11)
+scale = Vector2(0.1, 0.1)
+
+[node name="Drone =>" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_hpf4u")]
+position = Vector2(-52, 39)
+player = NodePath("../test_mob")
+
+[node name="test_mob" parent="." instance=ExtResource("6_c1trm")]
+position = Vector2(52, 34)
 
 [connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_timer_timeout"]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0apd7evulb3c"]
+
+[ext_resource type="Script" path="res://drone/drone.gd" id="1_pmy3e"]
+[ext_resource type="Texture2D" uid="uid://cn8wfnsk858yy" path="res://sprites/sprite_drone.png" id="2_1d7m3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6eg43"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t4l6k"]
+
+[node name="Drone =>" type="CharacterBody2D"]
+script = ExtResource("1_pmy3e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6eg43")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.38419e-07, 2.38419e-07)
+scale = Vector2(0.21875, 0.21875)
+texture = ExtResource("2_1d7m3")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_t4l6k")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
