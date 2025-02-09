@@ -1,6 +1,6 @@
 extends Node
 
-var hp = 2000
+var hp = 500
 var life = -1
 var cost = 2
 
@@ -11,8 +11,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if (hp <= 0):
 		queue_free()
+	$TextureProgressBar.value = hp
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if (area.is_in_group("drone") == true):
 		if (GlobalData.power >= cost and hp < 100):
-			hp += 1
+			hp += 50

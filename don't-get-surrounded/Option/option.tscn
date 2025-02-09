@@ -74,9 +74,9 @@ position = Vector2(19, 65)
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="remapper"]
 modulate = Color(0.423651, 0.423651, 0.423651, 1)
-position = Vector2(147.516, 317.426)
+position = Vector2(263.396, 317.426)
 rotation = -3.14159
-scale = Vector2(294.032, -496.667)
+scale = Vector2(525.792, -496.667)
 mesh = SubResource("QuadMesh_pfvon")
 
 [node name="Up_remapper" type="Button" parent="remapper"]
@@ -141,7 +141,7 @@ offset_top = 75.0
 offset_right = 262.0
 offset_bottom = 119.0
 theme_override_font_sizes/normal_font_size = 30
-text = "REMAPPER :"
+text = "Control  :"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="remapper"]
 offset_left = 10.0
@@ -191,6 +191,36 @@ offset_top = 505.0
 offset_right = 144.0
 offset_bottom = 545.0
 text = "STOP DRONE : "
+
+[node name="Up_remapper2" type="Button" parent="remapper"]
+offset_left = 368.0
+offset_top = 130.0
+offset_right = 494.0
+offset_bottom = 171.0
+script = ExtResource("4_eypis")
+action = "Upgrade"
+
+[node name="Up_remapper3" type="Button" parent="remapper"]
+offset_left = 370.0
+offset_top = 195.0
+offset_right = 496.0
+offset_bottom = 236.0
+script = ExtResource("4_eypis")
+action = "pause"
+
+[node name="RichTextLabel9" type="RichTextLabel" parent="remapper"]
+offset_left = 269.0
+offset_top = 134.0
+offset_right = 403.0
+offset_bottom = 174.0
+text = "UPGRADE  :"
+
+[node name="RichTextLabel10" type="RichTextLabel" parent="remapper"]
+offset_left = 269.0
+offset_top = 197.0
+offset_right = 403.0
+offset_bottom = 237.0
+text = "PAUSE :"
 
 [node name="Sound" type="Node2D" parent="."]
 script = ExtResource("5_ekfa8")

@@ -1,13 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://7ptqui75qglb"]
+[gd_scene load_steps=12 format=3 uid="uid://7ptqui75qglb"]
 
 [ext_resource type="Texture2D" uid="uid://db2uskkg72xk4" path="res://asset/map.png" id="1_u6okp"]
 [ext_resource type="PackedScene" uid="uid://c3qwlyxxcjoy2" path="res://turret/turret.tscn" id="2_3jo6x"]
 [ext_resource type="PackedScene" uid="uid://brmnx1pbw61aa" path="res://buildings/usine.tscn" id="3_w6vdj"]
 [ext_resource type="PackedScene" uid="uid://cx38ynxx7ba30" path="res://buildings/generator.tscn" id="4_7d354"]
 [ext_resource type="PackedScene" uid="uid://drymjmt1kmu3q" path="res://Wall/Wall.tscn" id="5_jydqa"]
-[ext_resource type="Texture2D" uid="uid://dirxru0gniqoq" path="res://sprites/body_03.png" id="6_n6ddu"]
+[ext_resource type="AudioStream" uid="uid://bp5cl0x6lysl" path="res://asset/celebration_BCb02kw.mp3" id="5_s27q0"]
+[ext_resource type="Texture2D" uid="uid://dccpvx7gjkbr2" path="res://sprites/body_03.png" id="6_n6ddu"]
 [ext_resource type="Script" path="res://Win/win_animation.gd" id="7_4fnxi"]
 [ext_resource type="Texture2D" uid="uid://dq7gec63svgkb" path="res://asset/sky.jpeg" id="8_t1v41"]
+[ext_resource type="PackedScene" uid="uid://d0apd7evulb3c" path="res://drone/drone_=>.tscn" id="9_38llk"]
 [ext_resource type="Texture2D" uid="uid://453wyc3a7vc3" path="res://asset/space.jpg" id="9_nq67a"]
 
 [node name="Win" type="Node2D"]
@@ -22,108 +24,104 @@ position = Vector2(-35.0001, -4429.38)
 scale = Vector2(7.20136, 7.59792)
 texture = ExtResource("9_nq67a")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="map" type="Node2D" parent="."]
 
-[node name="SpriteMap" type="Sprite2D" parent="Node2D"]
+[node name="SpriteMap" type="Sprite2D" parent="map"]
 show_behind_parent = true
 position = Vector2(-13, -9.99998)
 scale = Vector2(2.81747, 2.50781)
 texture = ExtResource("1_u6okp")
 
-[node name="turret" parent="Node2D" instance=ExtResource("2_3jo6x")]
+[node name="turret" parent="map" instance=ExtResource("2_3jo6x")]
 position = Vector2(711, -300)
-rotation = -0.436332
 
-[node name="Usine4" parent="Node2D" instance=ExtResource("3_w6vdj")]
+[node name="Drone =>" parent="map" instance=ExtResource("9_38llk")]
+position = Vector2(-28, 198)
+scale = Vector2(3.94, 3.82845)
+
+[node name="Usine4" parent="map" instance=ExtResource("3_w6vdj")]
 position = Vector2(350, 350)
 
-[node name="Usine3" parent="Node2D" instance=ExtResource("3_w6vdj")]
+[node name="Usine3" parent="map" instance=ExtResource("3_w6vdj")]
 position = Vector2(-350, -350)
 
-[node name="Usine2" parent="Node2D" instance=ExtResource("3_w6vdj")]
+[node name="Usine2" parent="map" instance=ExtResource("3_w6vdj")]
 position = Vector2(350, -350)
 
-[node name="Usine" parent="Node2D" instance=ExtResource("3_w6vdj")]
+[node name="Usine" parent="map" instance=ExtResource("3_w6vdj")]
 position = Vector2(-350, 350)
 
-[node name="generator4" parent="Node2D" instance=ExtResource("4_7d354")]
+[node name="generator4" parent="map" instance=ExtResource("4_7d354")]
 position = Vector2(-550, 0)
 
-[node name="generator3" parent="Node2D" instance=ExtResource("4_7d354")]
+[node name="generator3" parent="map" instance=ExtResource("4_7d354")]
 position = Vector2(0, 550)
 
-[node name="generator2" parent="Node2D" instance=ExtResource("4_7d354")]
+[node name="generator2" parent="map" instance=ExtResource("4_7d354")]
 position = Vector2(0, -550)
 
-[node name="generator" parent="Node2D" instance=ExtResource("4_7d354")]
+[node name="generator" parent="map" instance=ExtResource("4_7d354")]
 position = Vector2(550, 0)
 
-[node name="Wall" parent="Node2D" instance=ExtResource("5_jydqa")]
+[node name="Wall" parent="map" instance=ExtResource("5_jydqa")]
 position = Vector2(767, -6)
 scale = Vector2(1, 40)
 
-[node name="Wall2" parent="Node2D" instance=ExtResource("5_jydqa")]
+[node name="Wall2" parent="map" instance=ExtResource("5_jydqa")]
 position = Vector2(544, -546)
 rotation = -0.785398
 scale = Vector2(1, 40)
 
-[node name="Wall3" parent="Node2D" instance=ExtResource("5_jydqa")]
+[node name="Wall3" parent="map" instance=ExtResource("5_jydqa")]
 position = Vector2(1, -772)
 rotation = -1.5708
 scale = Vector2(1, 40)
 
-[node name="Wall4" parent="Node2D" instance=ExtResource("5_jydqa")]
+[node name="Wall4" parent="map" instance=ExtResource("5_jydqa")]
 position = Vector2(-542, -548)
 rotation = 3.92699
 scale = Vector2(1, 40)
 
-[node name="Wall5" parent="Node2D" instance=ExtResource("5_jydqa")]
+[node name="Wall5" parent="map" instance=ExtResource("5_jydqa")]
 position = Vector2(545, 536)
 rotation = 0.785398
 scale = Vector2(1, 40)
 
-[node name="Wall6" parent="Node2D" instance=ExtResource("5_jydqa")]
+[node name="Wall6" parent="map" instance=ExtResource("5_jydqa")]
 position = Vector2(1, 762)
 rotation = 1.5708
 scale = Vector2(1, 40)
 
-[node name="Wall7" parent="Node2D" instance=ExtResource("5_jydqa")]
+[node name="Wall7" parent="map" instance=ExtResource("5_jydqa")]
 position = Vector2(-544, 540)
 rotation = 2.35619
 scale = Vector2(1, 40)
 
-[node name="Wall8" parent="Node2D" instance=ExtResource("5_jydqa")]
+[node name="Wall8" parent="map" instance=ExtResource("5_jydqa")]
 position = Vector2(-769, -1)
 rotation = 3.14159
 scale = Vector2(1, 40)
 
-[node name="turret2" parent="Node2D" instance=ExtResource("2_3jo6x")]
-position = Vector2(711, 290)
-rotation = -0.436332
+[node name="turret2" parent="map" instance=ExtResource("2_3jo6x")]
+position = Vector2(699.205, 289.61)
 
-[node name="turret3" parent="Node2D" instance=ExtResource("2_3jo6x")]
-position = Vector2(290, -715)
-rotation = -0.436332
+[node name="turret3" parent="map" instance=ExtResource("2_3jo6x")]
+position = Vector2(285.895, -709.23)
 
-[node name="turret4" parent="Node2D" instance=ExtResource("2_3jo6x")]
-position = Vector2(-300, -713)
-rotation = -0.436332
+[node name="turret4" parent="map" instance=ExtResource("2_3jo6x")]
+position = Vector2(-293.14, -704.175)
 
-[node name="turret5" parent="Node2D" instance=ExtResource("2_3jo6x")]
-position = Vector2(-713, -298)
-rotation = -0.436332
+[node name="turret5" parent="map" instance=ExtResource("2_3jo6x")]
+position = Vector2(-703.005, -294.025)
 
-[node name="turret6" parent="Node2D" instance=ExtResource("2_3jo6x")]
-position = Vector2(-715, 293)
-rotation = -0.436332
+[node name="turret6" parent="map" instance=ExtResource("2_3jo6x")]
+position = Vector2(-700.63, 288.995)
 
-[node name="turret7" parent="Node2D" instance=ExtResource("2_3jo6x")]
-position = Vector2(-293, 710)
-rotation = -0.436332
+[node name="turret7" parent="map" instance=ExtResource("2_3jo6x")]
+position = Vector2(-293, 695.72)
 
-[node name="turret8" parent="Node2D" instance=ExtResource("2_3jo6x")]
-position = Vector2(300, 702)
-rotation = -0.436332
+[node name="turret8" parent="map" instance=ExtResource("2_3jo6x")]
+position = Vector2(292.475, 695.115)
 
 [node name="SpaceShip" type="Sprite2D" parent="."]
 position = Vector2(0, 1)
@@ -133,3 +131,9 @@ script = ExtResource("7_4fnxi")
 
 [node name="Camera2D" type="Camera2D" parent="SpaceShip"]
 zoom = Vector2(0.5, 0.5)
+
+[node name="win" type="AudioStreamPlayer2D" parent="SpaceShip"]
+position = Vector2(0, -1.15315)
+scale = Vector2(1, 1.15315)
+stream = ExtResource("5_s27q0")
+autoplay = true

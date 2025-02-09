@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://drymjmt1kmu3q"]
+[gd_scene load_steps=8 format=3 uid="uid://drymjmt1kmu3q"]
 
 [ext_resource type="Texture2D" uid="uid://bwex583ev1fk" path="res://asset/wall.png" id="1_gjbsq"]
 [ext_resource type="Script" path="res://Wall/Wall.gd" id="1_vydor"]
+[ext_resource type="Texture2D" uid="uid://wf0rf3pivs2b" path="res://asset/New Piskel (3).png" id="3_qxkpy"]
+[ext_resource type="Texture2D" uid="uid://hdiu5cs7doje" path="res://asset/New Piskel (2).png" id="4_ag44j"]
+[ext_resource type="Texture2D" uid="uid://dd86nycwiph1a" path="res://asset/New Piskel (4).png" id="5_efj15"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0q3dq"]
 size = Vector2(161, 151)
@@ -31,6 +34,18 @@ shape = SubResource("RectangleShape2D_1pum6")
 [node name="Hit_rate" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = -13.0
+offset_top = 8.0
+offset_right = 339.0
+offset_bottom = 184.0
+rotation = -1.56573
+scale = Vector2(0.0446042, 0.0284021)
+max_value = 500.0
+texture_under = ExtResource("3_qxkpy")
+texture_over = ExtResource("4_ag44j")
+texture_progress = ExtResource("5_efj15")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="Hit_rate" to="." method="_on_hit_rate_timeout"]
