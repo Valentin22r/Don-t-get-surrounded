@@ -1,22 +1,24 @@
 [gd_scene load_steps=5 format=3 uid="uid://cx38ynxx7ba30"]
 
 [ext_resource type="Script" path="res://buildings/generator.gd" id="1_iiyhh"]
-[ext_resource type="Texture2D" uid="uid://bbn1sfkfb1gcf" path="res://sprites/sprite_generator.png" id="2_7awi3"]
+[ext_resource type="Texture2D" uid="uid://dxu8on7d3rwob" path="res://sprites/powerplant1.png" id="2_2xtws"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fx2lb"]
-size = Vector2(32, 32)
+size = Vector2(203, 213)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ubx3b"]
-radius = 47.1699
+radius = 154.208
 
 [node name="generator" type="StaticBody2D"]
 script = ExtResource("1_iiyhh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 1.5)
 shape = SubResource("RectangleShape2D_fx2lb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_7awi3")
+scale = Vector2(0.21, 0.21)
+texture = ExtResource("2_2xtws")
 
 [node name="Area2D" type="Area2D" parent="."]
 

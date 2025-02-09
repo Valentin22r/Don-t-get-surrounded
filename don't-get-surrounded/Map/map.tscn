@@ -33,13 +33,14 @@ position = Vector2(-9, -16)
 
 [node name="Spawner" type="Node" parent="."]
 script = ExtResource("3_6u2hr")
+rand_x = 750
+rand_y = 750
 
 [node name="Timer" type="Timer" parent="Spawner"]
 autostart = true
 
 [node name="turret" parent="." instance=ExtResource("4_48m3y")]
 position = Vector2(711, -300)
-rotation = -0.436332
 
 [node name="Drone =>" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_hpf4u")]
 position = Vector2(-28, 198)
@@ -116,30 +117,50 @@ scale = Vector2(1, 40)
 
 [node name="turret2" parent="." instance=ExtResource("4_48m3y")]
 position = Vector2(699.205, 289.61)
-rotation = 0.521853
 
 [node name="turret3" parent="." instance=ExtResource("4_48m3y")]
 position = Vector2(285.895, -709.23)
-rotation = -1.27409
 
 [node name="turret4" parent="." instance=ExtResource("4_48m3y")]
 position = Vector2(-293.14, -704.175)
-rotation = -1.87274
 
 [node name="turret5" parent="." instance=ExtResource("4_48m3y")]
 position = Vector2(-703.005, -294.025)
-rotation = 3.51335
 
 [node name="turret6" parent="." instance=ExtResource("4_48m3y")]
 position = Vector2(-700.63, 288.995)
-rotation = 2.79427
 
 [node name="turret7" parent="." instance=ExtResource("4_48m3y")]
 position = Vector2(-293, 695.72)
-rotation = 1.95651
 
 [node name="turret8" parent="." instance=ExtResource("4_48m3y")]
 position = Vector2(292.475, 695.115)
-rotation = 1.11876
+
+[node name="Spawner2" type="Node" parent="."]
+script = ExtResource("3_6u2hr")
+rand_x = 750
+rand_y = -750
+
+[node name="Timer" type="Timer" parent="Spawner2"]
+autostart = true
+
+[node name="Spawner3" type="Node" parent="."]
+script = ExtResource("3_6u2hr")
+rand_x = -750
+rand_y = 750
+
+[node name="Timer" type="Timer" parent="Spawner3"]
+autostart = true
+
+[node name="Spawner4" type="Node" parent="."]
+script = ExtResource("3_6u2hr")
+rand_x = -750
+rand_y = -750
+
+[node name="Timer" type="Timer" parent="Spawner4"]
+autostart = true
 
 [connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="Spawner2/Timer" to="Spawner2" method="_on_timer_timeout"]
+[connection signal="timeout" from="Spawner3/Timer" to="Spawner3" method="_on_timer_timeout"]
+[connection signal="timeout" from="Spawner4/Timer" to="Spawner4" method="_on_timer_timeout"]

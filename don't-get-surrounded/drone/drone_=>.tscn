@@ -12,6 +12,7 @@ radius = 4.0
 [node name="Drone =>" type="CharacterBody2D"]
 scale = Vector2(3.94, 3.94)
 script = ExtResource("1_pmy3e")
+speed = 120
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_6eg43")

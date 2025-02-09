@@ -27,7 +27,8 @@ func _process(delta):
 
 func shoot():
 #	var random_shoot = randf_range(-1.52, -1.68)
-	var random_shoot = randf_range(-1.92, -2.08)
+	$AttackTimer.start()
+	var random_shoot = randf_range(-1.52, -1.68)
 	var instance_bullet = bullet.instantiate()
 	instance_bullet._direction = rotation + random_shoot;
 	instance_bullet._origin = global_position;
@@ -54,7 +55,6 @@ func _on_detection_area_area_shape_exited(area_rid, area, area_shape_index, loca
 
 
 func _on_timer_timeout():
-	GlobalData.power -= 1;
 	timer.wait_time = weapon_reload;
 	if (!is_target_shootable):
 		timer.stop;
@@ -62,4 +62,13 @@ func _on_timer_timeout():
 	if (GlobalData.ammo > 0):
 		GlobalData.ammo -= 1;
 		shoot();
+	pass # Replace with function body.
+
+
+func _on_attack_timer_timeout():
+	if ($turret_sprite.frame >= 7):
+		$turret_sprite.frame = 0
+		$AttackTimer.stop()
+		return;
+	$turret_sprite.frame += 1;
 	pass # Replace with function body.

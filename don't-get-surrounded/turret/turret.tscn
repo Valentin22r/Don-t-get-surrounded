@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://c3qwlyxxcjoy2"]
 
 [ext_resource type="Script" path="res://turret/turret_aim.gd" id="1_0hkuf"]
-[ext_resource type="Texture2D" uid="uid://bmy4wkc0k5jh5" path="res://sprites/towers_walls_blank.png" id="2_15n03"]
-[ext_resource type="Texture2D" uid="uid://clvma48snklxj" path="res://sprites/turret_01_mk1.png" id="3_tpx1y"]
+[ext_resource type="Texture2D" uid="uid://bmy4wkc0k5jh5" path="res://sprites/towers_walls_blank.png" id="1_orutx"]
+[ext_resource type="Texture2D" uid="uid://clvma48snklxj" path="res://sprites/turret_01_mk1.png" id="2_duwv4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_57eh5"]
 radius = 299.051
@@ -11,8 +11,8 @@ radius = 299.051
 scale = Vector2(2, 2)
 
 [node name="turret_body" type="Sprite2D" parent="."]
-scale = Vector2(0.488281, 0.503906)
-texture = ExtResource("2_15n03")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_orutx")
 hframes = 6
 vframes = 5
 
@@ -29,18 +29,21 @@ light_mask = 0
 visibility_layer = 3
 shape = SubResource("CircleShape2D_57eh5")
 
-[node name="Timer" type="Timer" parent="MeshInstance2D"]
-autostart = true
-
 [node name="turret_sprite" type="Sprite2D" parent="MeshInstance2D"]
 light_mask = 3
 visibility_layer = 3
-position = Vector2(0, -0.5)
 rotation = 1.5708
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("3_tpx1y")
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_duwv4")
 hframes = 8
+
+[node name="Timer" type="Timer" parent="MeshInstance2D"]
+autostart = true
+
+[node name="AttackTimer" type="Timer" parent="MeshInstance2D"]
+wait_time = 0.05
 
 [connection signal="area_shape_entered" from="MeshInstance2D/detection_area" to="MeshInstance2D" method="_on_detection_area_area_shape_entered"]
 [connection signal="area_shape_exited" from="MeshInstance2D/detection_area" to="MeshInstance2D" method="_on_detection_area_area_shape_exited"]
 [connection signal="timeout" from="MeshInstance2D/Timer" to="MeshInstance2D" method="_on_timer_timeout"]
+[connection signal="timeout" from="MeshInstance2D/AttackTimer" to="MeshInstance2D" method="_on_attack_timer_timeout"]

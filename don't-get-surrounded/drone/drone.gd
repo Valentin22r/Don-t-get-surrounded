@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-var speed = 25
-var life = 30
+@export var speed = 25
+@export var life = 30
 
 enum DroneState {
 	FOLLOWING = 2,

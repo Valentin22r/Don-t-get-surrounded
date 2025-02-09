@@ -1,7 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://brmnx1pbw61aa"]
+[gd_scene load_steps=10 format=3 uid="uid://brmnx1pbw61aa"]
 
 [ext_resource type="Script" path="res://buildings/usine.gd" id="1_awu37"]
 [ext_resource type="Texture2D" uid="uid://boyi6hivb0s4" path="res://sprites/sprite_usine.png" id="2_43qri"]
+[ext_resource type="Texture2D" uid="uid://m1tt63l2ktxw" path="res://sprites/progression_bottom_bar_submodules.png" id="3_pa0a2"]
+[ext_resource type="Texture2D" uid="uid://cxgo1a51hin15" path="res://sprites/progression_top_bar_submodules.png" id="4_ljeh1"]
+[ext_resource type="Texture2D" uid="uid://dwu62gi7twicr" path="res://sprites/progression_bar_submodules.png" id="5_ju8lg"]
+[ext_resource type="Script" path="res://buildings/texture_progress_usine.gd" id="6_xppx3"]
+[ext_resource type="Texture2D" uid="uid://c2is0j0oqushk" path="res://sprites/sprite_manufacturing.png" id="7_q80m5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_os4bc"]
 size = Vector2(32, 32)
@@ -25,6 +30,30 @@ shape = SubResource("CircleShape2D_ifybw")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control" node_paths=PackedStringArray("usine")]
+layout_mode = 0
+offset_left = -32.0
+offset_top = -49.0
+offset_right = 17.0
+offset_bottom = -9.0
+texture_under = ExtResource("3_pa0a2")
+texture_over = ExtResource("4_ljeh1")
+texture_progress = ExtResource("5_ju8lg")
+script = ExtResource("6_xppx3")
+usine = NodePath("../..")
+
+[node name="Construction" type="Sprite2D" parent="."]
+position = Vector2(24, -41)
+scale = Vector2(0.59375, 0.5625)
+texture = ExtResource("7_q80m5")
+hframes = 3
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
