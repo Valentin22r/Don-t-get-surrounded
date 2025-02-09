@@ -5,6 +5,7 @@ var life = -1
 var cost = 2
 
 func _ready() -> void:
+	add_to_group("building")
 	$Area2D.add_to_group("building")
 
 func _process(delta: float) -> void:

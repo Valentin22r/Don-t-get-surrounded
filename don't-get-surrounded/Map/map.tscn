@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://waqt1sgk861m"]
+[gd_scene load_steps=13 format=3 uid="uid://waqt1sgk861m"]
 
+[ext_resource type="AudioStream" uid="uid://dyytv0nuuaufy" path="res://asset/apocalypse-161568.mp3" id="1_7gxy8"]
 [ext_resource type="PackedScene" uid="uid://bm0sc8rpmwfly" path="res://Base/Base.tscn" id="1_vb7m2"]
 [ext_resource type="Script" path="res://Map/spawner.gd" id="3_6u2hr"]
 [ext_resource type="PackedScene" uid="uid://c3qwlyxxcjoy2" path="res://turret/turret.tscn" id="4_48m3y"]
@@ -17,6 +18,11 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(277, -2581, -1216, -1478, -1346, 825, 2536, 1105, 2365, -2224)])
 
 [node name="Map" type="Node2D"]
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_7gxy8")
+autoplay = true
+parameters/looping = true
 
 [node name="SpriteMap" type="Sprite2D" parent="."]
 show_behind_parent = true

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://qkm5wwp2rcmx"]
+[gd_scene load_steps=8 format=3 uid="uid://qkm5wwp2rcmx"]
 
 [ext_resource type="Script" path="res://turret/player.gd" id="1_w7i2s"]
 [ext_resource type="Texture2D" uid="uid://c6babccsrv1px" path="res://asset/player.png" id="3_aoqmg"]
 [ext_resource type="Script" path="res://turret/hud.gd" id="3_koc7y"]
+[ext_resource type="PackedScene" uid="uid://cmhshkl0kcfp7" path="res://Pause/pause.tscn" id="4_ocaho"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dc6b2"]
 
@@ -106,3 +107,11 @@ offset_right = -142.75
 offset_bottom = -87.25
 theme_override_font_sizes/normal_font_size = 10
 text = "0"
+
+[node name="Menu" parent="Hud" instance=ExtResource("4_ocaho")]
+visible = false
+offset_left = -291.983
+offset_top = -176.371
+offset_right = -291.983
+offset_bottom = -176.371
+scale = Vector2(0.419115, 0.439774)

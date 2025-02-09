@@ -19,3 +19,6 @@ func _process(delta):
 		velocity.y -= 1
 	if velocity.length() > 0:
 		position += velocity.normalized() * delta * speed
+	if Input.is_action_just_pressed("ui_rights"):
+		$Hud/Menu.show()
+		Engine.time_scale = 0

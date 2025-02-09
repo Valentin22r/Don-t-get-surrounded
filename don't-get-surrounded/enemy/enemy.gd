@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var speed = 35
 var life = GlobalData.basic_enemy_life
+var hp = -1
 var death_animation_repetition = 2
 var death_time = 1
 var target: Array
@@ -35,12 +36,8 @@ func _on_timer_timeout() -> void:
 			$Sprite2D.flip_v = false
 		else:
 			$Sprite2D.flip_v = true
-		if (life > 0):
-			if ($Sprite2D.frame >= 5):
-				$Sprite2D.frame = 0
-			$Sprite2D.frame += 1
-		else:
-			add_to_group("drone")
+	else:
+		add_to_group("drone")
 		makepath()
 
 func death() -> void:
@@ -56,10 +53,13 @@ func _on_timer_death_timeout() -> void:
 		$Death.frame = 0
 	$Death.frame += 1
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	if (area.is_in_group("building") == true):
-		target.append(area)
-
 func _on_timer_attack_timeout() -> void:
-	if (target.is_empty() == false):
-		target[0].hp -= 1
+	if not target.is_empty():
+		if is_instance_valid(target[0]):
+			target[0].hp -= 1
+		else:
+			target.pop_front()
+
+func _on_area_2d_body_entered(body: Node) -> void:
+	if body is StaticBody2D and body.is_in_group("building"):
+		target.append(body)
