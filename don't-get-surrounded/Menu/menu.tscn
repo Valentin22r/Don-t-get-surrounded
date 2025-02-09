@@ -121,6 +121,7 @@ autoplay = true
 parameters/looping = false
 
 [node name="Option_button2" type="Button" parent="."]
+layout_mode = 0
 offset_left = 969.0
 offset_top = 593.0
 offset_right = 1140.0

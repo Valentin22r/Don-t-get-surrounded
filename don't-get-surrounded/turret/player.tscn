@@ -110,6 +110,24 @@ offset_bottom = -87.25
 theme_override_font_sizes/normal_font_size = 10
 text = "0"
 
+[node name="SpriteManufacturing" type="Sprite2D" parent="Hud"]
+position = Vector2(-207.595, -102.954)
+scale = Vector2(0.50879, 0.5)
+texture = ExtResource("5_20pcj")
+hframes = 3
+
+[node name="SpriteManufacturing3" type="Sprite2D" parent="Hud"]
+position = Vector2(-207.595, -132.49)
+scale = Vector2(0.50879, 0.5)
+texture = ExtResource("5_20pcj")
+hframes = 3
+frame = 2
+
+[node name="SpriteGenerator" type="Sprite2D" parent="Hud"]
+position = Vector2(-207.595, -116.456)
+scale = Vector2(0.368143, 0.368143)
+texture = ExtResource("6_tb5x7")
+
 [node name="Pause" parent="Hud" instance=ExtResource("4_ocaho")]
 visible = false
 offset_left = -291.983
@@ -117,21 +135,3 @@ offset_top = -176.371
 offset_right = -291.983
 offset_bottom = -176.371
 scale = Vector2(0.419115, 0.439774)
-
-[node name="SpriteManufacturing" type="Sprite2D" parent="."]
-position = Vector2(-157.806, -73.4177)
-scale = Vector2(0.50879, 0.5)
-texture = ExtResource("5_20pcj")
-hframes = 3
-
-[node name="SpriteManufacturing3" type="Sprite2D" parent="."]
-position = Vector2(-157.806, -102.954)
-scale = Vector2(0.50879, 0.5)
-texture = ExtResource("5_20pcj")
-hframes = 3
-frame = 2
-
-[node name="SpriteGenerator" type="Sprite2D" parent="."]
-position = Vector2(-157.806, -86.9198)
-scale = Vector2(0.368143, 0.368143)
-texture = ExtResource("6_tb5x7")
