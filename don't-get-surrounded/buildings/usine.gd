@@ -73,12 +73,12 @@ func create_resource():
 func _on_timer_timeout():
 	if (GlobalData.power < 0):
 		return;
-	if (life < 100):
-		life += workspeed
+	if (hp < 100):
+		hp += workspeed
 		GlobalData.power -= workspeed
-		if (life > 100):
-			life == 100;
-	if (life < 0):
+		if (hp > 100):
+			hp == 100;
+	if (hp < 0):
 		return;
 	GlobalData.power -= upgrade_count;
 	ongoing_construction += (1 + (0.1 * workspeed) + (0.5 * upgrade_count));
