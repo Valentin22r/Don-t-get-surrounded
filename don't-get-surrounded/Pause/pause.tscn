@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cmhshkl0kcfp7"]
+[gd_scene load_steps=9 format=3 uid="uid://cmhshkl0kcfp7"]
 
 [ext_resource type="Script" path="res://Option/option.gd" id="1_epeyf"]
 [ext_resource type="Texture2D" uid="uid://s5c80ntcre1l" path="res://asset/setting.webp" id="2_nkxrx"]
@@ -6,7 +6,6 @@
 [ext_resource type="AudioStream" uid="uid://dusk3q31yymdu" path="res://asset/adriantnt_u_click.mp3" id="4_h4nw4"]
 [ext_resource type="Script" path="res://Option/remapper.gd" id="5_hwyv1"]
 [ext_resource type="Script" path="res://Option/sound.gd" id="6_m7w68"]
-[ext_resource type="AudioStream" uid="uid://6jea0g7ltygp" path="res://asset/elevator-ride-296159.mp3" id="7_h288a"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_pfvon"]
 
@@ -233,11 +232,6 @@ offset_left = 1080.0
 offset_top = 197.0
 offset_right = 1125.0
 offset_bottom = 232.0
-
-[node name="Music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_h288a")
-autoplay = true
-parameters/looping = true
 
 [connection signal="pressed" from="Back_button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Continue_button" to="." method="_on_continue_button_pressed"]

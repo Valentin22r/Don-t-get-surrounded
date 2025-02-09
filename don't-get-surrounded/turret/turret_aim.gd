@@ -36,6 +36,7 @@ func shoot():
 	instance_bullet._damage = weapon_damage;
 	instance_bullet._zindex = z_index + 1;
 	map.add_child(instance_bullet)
+	$shoot_sound.play()
 	pass;
 
 func _on_detection_area_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):

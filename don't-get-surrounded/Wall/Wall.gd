@@ -1,6 +1,6 @@
 extends Node
 
-var hp = 100
+var hp = 2000
 var life = -1
 var cost = 2
 

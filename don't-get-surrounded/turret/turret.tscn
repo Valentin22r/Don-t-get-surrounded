@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3qwlyxxcjoy2"]
+[gd_scene load_steps=6 format=3 uid="uid://c3qwlyxxcjoy2"]
 
 [ext_resource type="Script" path="res://turret/turret_aim.gd" id="1_0hkuf"]
 [ext_resource type="Texture2D" uid="uid://bmy4wkc0k5jh5" path="res://sprites/towers_walls_blank.png" id="1_orutx"]
 [ext_resource type="Texture2D" uid="uid://clvma48snklxj" path="res://sprites/turret_01_mk1.png" id="2_duwv4"]
+[ext_resource type="AudioStream" uid="uid://buy4j7f3kp6we" path="res://asset/pixel-gun-3d-predator.mp3" id="4_v4rqa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_57eh5"]
 radius = 299.051
@@ -21,6 +22,12 @@ script = ExtResource("1_0hkuf")
 weapon_damage = 10
 weapon_reload = 1.34
 timer = NodePath("Timer")
+
+[node name="shoot_sound" type="AudioStreamPlayer2D" parent="MeshInstance2D"]
+stream = ExtResource("4_v4rqa")
+volume_db = -5.535
+max_distance = 1000.0
+attenuation = 3.13834
 
 [node name="detection_area" type="Area2D" parent="MeshInstance2D"]
 
