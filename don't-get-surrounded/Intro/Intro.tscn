@@ -63,6 +63,7 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 23.0
 offset_top = 154.0
 offset_right = 1110.0

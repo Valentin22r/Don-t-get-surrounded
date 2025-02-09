@@ -1,0 +1,99 @@
+[gd_scene load_steps=6 format=3 uid="uid://dc7qtkdnq1dkw"]
+
+[ext_resource type="Script" path="res://Credit/credit.gd" id="1_y7a8a"]
+[ext_resource type="Texture2D" uid="uid://s5c80ntcre1l" path="res://asset/setting.webp" id="2_tocf4"]
+[ext_resource type="FontFile" uid="uid://btuacg6r7j45d" path="res://asset/F-Rotten_Font.ttf" id="3_dt523"]
+[ext_resource type="AudioStream" uid="uid://dusk3q31yymdu" path="res://asset/adriantnt_u_click.mp3" id="4_3qwun"]
+[ext_resource type="AudioStream" uid="uid://6jea0g7ltygp" path="res://asset/elevator-ride-296159.mp3" id="5_k04nl"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -7.0
+offset_right = 9.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y7a8a")
+
+[node name="Setting" type="Sprite2D" parent="."]
+position = Vector2(565, 324)
+scale = Vector2(0.619792, 0.535938)
+texture = ExtResource("2_tocf4")
+
+[node name="Back_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 944.0
+offset_top = 594.0
+offset_right = 1141.0
+offset_bottom = 640.0
+theme_override_fonts/font = ExtResource("3_dt523")
+theme_override_font_sizes/font_size = 30
+text = "BACK TO  MENU"
+
+[node name="click_buttons" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_3qwun")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 29.0
+offset_right = 678.0
+offset_bottom = 238.0
+theme_override_colors/default_color = Color(0.137255, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_dt523")
+theme_override_font_sizes/normal_font_size = 120
+text = "CREDIT"
+scroll_active = false
+autowrap_mode = 2
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 23.0
+offset_right = 674.0
+offset_bottom = 232.0
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_dt523")
+theme_override_font_sizes/normal_font_size = 120
+text = "CREDIT"
+scroll_active = false
+autowrap_mode = 2
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_k04nl")
+autoplay = true
+parameters/looping = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 122.0
+offset_right = 885.0
+offset_bottom = 468.0
+text = "Developed by:
+Valentin Roquejoffre
+Antoine Quillet
+
+Story & Game Design:
+Valentin Roquejoffre & Antoine Quillet
+
+Programming:
+Valentin Roquejoffre & Antoine Quillet
+
+Art & Visuals:
+Valentin Roquejoffre & Antoine Quillet
+
+Engine:
+Powered by Godot Engine
+
+"
+
+[connection signal="pressed" from="Back_button" to="." method="_on_back_button_pressed"]

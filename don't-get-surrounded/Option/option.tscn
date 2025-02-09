@@ -22,8 +22,8 @@ grow_vertical = 2
 script = ExtResource("1_4lq6u")
 
 [node name="Setting" type="Sprite2D" parent="."]
-position = Vector2(572, 329)
-scale = Vector2(0.604167, 0.5)
+position = Vector2(572, 306)
+scale = Vector2(0.604167, 0.535937)
 texture = ExtResource("2_m57py")
 
 [node name="Back_button" type="Button" parent="."]
