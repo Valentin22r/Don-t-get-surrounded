@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cmhshkl0kcfp7"]
 
-[ext_resource type="Script" path="res://Option/option.gd" id="1_epeyf"]
+[ext_resource type="Script" path="res://Pause/pause.gd" id="1_uiodm"]
 [ext_resource type="Texture2D" uid="uid://s5c80ntcre1l" path="res://asset/setting.webp" id="2_nkxrx"]
 [ext_resource type="FontFile" uid="uid://btuacg6r7j45d" path="res://asset/F-Rotten_Font.ttf" id="3_f5ykd"]
 [ext_resource type="AudioStream" uid="uid://dusk3q31yymdu" path="res://asset/adriantnt_u_click.mp3" id="4_h4nw4"]
@@ -18,7 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_epeyf")
+script = ExtResource("1_uiodm")
 
 [node name="Setting" type="Sprite2D" parent="."]
 position = Vector2(572, 329)
