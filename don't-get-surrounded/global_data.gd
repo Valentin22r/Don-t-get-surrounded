@@ -10,3 +10,5 @@ var ammo = 300
 var kill = 0
 var basic_enemy_life = 10
 var big_enemy_life = 50
+
+var sound = 0

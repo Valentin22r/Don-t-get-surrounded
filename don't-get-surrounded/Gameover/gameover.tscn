@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://co5spqf0lte6t"]
+[gd_scene load_steps=5 format=3 uid="uid://co5spqf0lte6t"]
 
 [ext_resource type="Script" path="res://Gameover/gameover.gd" id="1_5tlfo"]
 [ext_resource type="Texture2D" uid="uid://hmtlh56ssirw" path="res://asset/nuke.png" id="2_lhgf8"]
 [ext_resource type="FontFile" uid="uid://btuacg6r7j45d" path="res://asset/F-Rotten_Font.ttf" id="3_4ha6m"]
+[ext_resource type="AudioStream" uid="uid://dusk3q31yymdu" path="res://asset/adriantnt_u_click.mp3" id="4_mwnlw"]
 
 [node name="Gameover" type="Control"]
 layout_mode = 3
@@ -79,6 +80,9 @@ scroll_active = false
 autowrap_mode = 2
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
+
+[node name="click_buttons" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_mwnlw")
 
 [connection signal="pressed" from="Play_button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Menu_button" to="." method="_on_menu_button_pressed"]

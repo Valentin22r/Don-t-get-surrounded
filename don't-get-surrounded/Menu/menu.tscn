@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://qq4jq5b8n4w8"]
+[gd_scene load_steps=6 format=3 uid="uid://qq4jq5b8n4w8"]
 
 [ext_resource type="Script" path="res://Menu/menu.gd" id="1_8nu36"]
 [ext_resource type="FontFile" uid="uid://btuacg6r7j45d" path="res://asset/F-Rotten_Font.ttf" id="2_d25fu"]
 [ext_resource type="Texture2D" uid="uid://cj0lx4p0nlck8" path="res://asset/image (4).png" id="2_hg5t0"]
+[ext_resource type="AudioStream" uid="uid://dusk3q31yymdu" path="res://asset/adriantnt_u_click.mp3" id="4_upxka"]
+[ext_resource type="AudioStream" uid="uid://6jea0g7ltygp" path="res://asset/elevator-ride-296159.mp3" id="4_w8bbx"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -47,6 +49,9 @@ offset_bottom = 600.0
 theme_override_fonts/font = ExtResource("2_d25fu")
 theme_override_font_sizes/font_size = 30
 text = "QUIT"
+
+[node name="click_buttons" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_upxka")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
@@ -109,6 +114,11 @@ scroll_active = false
 autowrap_mode = 2
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_w8bbx")
+autoplay = true
+parameters/looping = false
 
 [connection signal="pressed" from="Play_button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Option_button" to="." method="_on_option_button_pressed"]

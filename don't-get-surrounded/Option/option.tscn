@@ -1,0 +1,233 @@
+[gd_scene load_steps=10 format=3 uid="uid://brf00khaq4231"]
+
+[ext_resource type="Script" path="res://Option/option.gd" id="1_4lq6u"]
+[ext_resource type="Texture2D" uid="uid://s5c80ntcre1l" path="res://asset/setting.webp" id="2_m57py"]
+[ext_resource type="FontFile" uid="uid://btuacg6r7j45d" path="res://asset/F-Rotten_Font.ttf" id="3_l74om"]
+[ext_resource type="AudioStream" uid="uid://dusk3q31yymdu" path="res://asset/adriantnt_u_click.mp3" id="4_aaa4x"]
+[ext_resource type="Script" path="res://Option/remapper.gd" id="4_eypis"]
+[ext_resource type="Script" path="res://Option/sound.gd" id="5_ekfa8"]
+[ext_resource type="AudioStream" uid="uid://6jea0g7ltygp" path="res://asset/elevator-ride-296159.mp3" id="6_6i37i"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_pfvon"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_yu7wm"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4lq6u")
+
+[node name="Setting" type="Sprite2D" parent="."]
+position = Vector2(572, 329)
+scale = Vector2(0.604167, 0.5)
+texture = ExtResource("2_m57py")
+
+[node name="Back_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 944.0
+offset_top = 594.0
+offset_right = 1141.0
+offset_bottom = 640.0
+theme_override_fonts/font = ExtResource("3_l74om")
+theme_override_font_sizes/font_size = 30
+text = "BACK TO  MENU"
+
+[node name="click_buttons" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_aaa4x")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 29.0
+offset_right = 678.0
+offset_bottom = 238.0
+theme_override_colors/default_color = Color(0.137255, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_l74om")
+theme_override_font_sizes/normal_font_size = 120
+text = "SETTING"
+scroll_active = false
+autowrap_mode = 2
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 23.0
+offset_right = 674.0
+offset_bottom = 232.0
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_l74om")
+theme_override_font_sizes/normal_font_size = 120
+text = "SETTING"
+scroll_active = false
+autowrap_mode = 2
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="remapper" type="Node2D" parent="."]
+position = Vector2(19, 65)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="remapper"]
+modulate = Color(0.423651, 0.423651, 0.423651, 1)
+position = Vector2(147.516, 317.426)
+rotation = -3.14159
+scale = Vector2(294.032, -496.667)
+mesh = SubResource("QuadMesh_pfvon")
+
+[node name="Up_remapper" type="Button" parent="remapper"]
+offset_left = 135.0
+offset_top = 130.0
+offset_right = 261.0
+offset_bottom = 171.0
+script = ExtResource("4_eypis")
+action = "test_up"
+
+[node name="Down_remapper" type="Button" parent="remapper"]
+offset_left = 133.0
+offset_top = 189.0
+offset_right = 259.0
+offset_bottom = 232.0
+script = ExtResource("4_eypis")
+action = "test_down"
+
+[node name="Left_remapper" type="Button" parent="remapper"]
+offset_left = 134.0
+offset_top = 256.0
+offset_right = 260.0
+offset_bottom = 297.0
+script = ExtResource("4_eypis")
+action = "test_left"
+
+[node name="Right_remapper" type="Button" parent="remapper"]
+offset_left = 133.0
+offset_top = 316.0
+offset_right = 259.0
+offset_bottom = 354.0
+script = ExtResource("4_eypis")
+action = "test_right"
+
+[node name="Interact_remapper" type="Button" parent="remapper"]
+offset_left = 132.0
+offset_top = 377.0
+offset_right = 258.0
+offset_bottom = 418.0
+script = ExtResource("4_eypis")
+action = "Interact"
+
+[node name="Call_remapper" type="Button" parent="remapper"]
+offset_left = 132.0
+offset_top = 443.0
+offset_right = 258.0
+offset_bottom = 481.0
+script = ExtResource("4_eypis")
+action = "call_drones"
+
+[node name="Stop_remapper" type="Button" parent="remapper"]
+offset_left = 134.0
+offset_top = 500.0
+offset_right = 260.0
+offset_bottom = 538.0
+script = ExtResource("4_eypis")
+action = "stop_drones"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="remapper"]
+offset_left = 10.0
+offset_top = 75.0
+offset_right = 262.0
+offset_bottom = 119.0
+theme_override_font_sizes/normal_font_size = 30
+text = "REMAPPER :"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="remapper"]
+offset_left = 10.0
+offset_top = 134.0
+offset_right = 144.0
+offset_bottom = 174.0
+text = "UP  :"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="remapper"]
+offset_left = 10.0
+offset_top = 197.0
+offset_right = 144.0
+offset_bottom = 237.0
+text = "DOWN :"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="remapper"]
+offset_left = 10.0
+offset_top = 263.0
+offset_right = 144.0
+offset_bottom = 303.0
+text = "LEFT :"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="remapper"]
+offset_left = 10.0
+offset_top = 324.0
+offset_right = 144.0
+offset_bottom = 364.0
+text = "RIGHT :"
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="remapper"]
+offset_left = 10.0
+offset_top = 384.0
+offset_right = 144.0
+offset_bottom = 424.0
+text = "INTERACT :"
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="remapper"]
+offset_left = 10.0
+offset_top = 451.0
+offset_right = 144.0
+offset_bottom = 491.0
+text = "CALL DRONE :"
+
+[node name="RichTextLabel8" type="RichTextLabel" parent="remapper"]
+offset_left = 10.0
+offset_top = 505.0
+offset_right = 144.0
+offset_bottom = 545.0
+text = "STOP DRONE : "
+
+[node name="Sound" type="Node2D" parent="."]
+script = ExtResource("5_ekfa8")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Sound"]
+modulate = Color(0.423529, 0.423529, 0.423529, 1)
+position = Vector2(949.625, 184.125)
+scale = Vector2(362.75, 101.75)
+mesh = SubResource("QuadMesh_yu7wm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Sound"]
+offset_left = 776.0
+offset_top = 144.0
+offset_right = 1028.0
+offset_bottom = 195.0
+theme_override_font_sizes/normal_font_size = 30
+text = "SOUND :"
+
+[node name="HSlider" type="HSlider" parent="Sound"]
+modulate = Color(0.835294, 0.870588, 0.0392157, 1)
+offset_left = 779.0
+offset_top = 200.0
+offset_right = 1073.0
+offset_bottom = 217.0
+min_value = -30.0
+max_value = 0.0
+
+[node name="sound_level" type="RichTextLabel" parent="Sound"]
+offset_left = 1080.0
+offset_top = 197.0
+offset_right = 1125.0
+offset_bottom = 232.0
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_6i37i")
+autoplay = true
+parameters/looping = true
+
+[connection signal="pressed" from="Back_button" to="." method="_on_back_button_pressed"]
+[connection signal="value_changed" from="Sound/HSlider" to="Sound" method="_on_h_slider_value_changed"]
