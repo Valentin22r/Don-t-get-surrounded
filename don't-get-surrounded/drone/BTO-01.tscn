@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b61coeh4educi"]
+
+[ext_resource type="Script" path="res://drone/area_2d.gd" id="2_icg5g"]
+[ext_resource type="Texture2D" uid="uid://car68x45swp" path="res://sprites/Sprite_BTO-01.png" id="3_xymhp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t56f7"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xpgf0"]
+
+[node name="BTO-01" type="CharacterBody2D"]
+scale = Vector2(2.37, 2.37)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_t56f7")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_icg5g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1.215, 1.215)
+shape = SubResource("CircleShape2D_xpgf0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("3_xymhp")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

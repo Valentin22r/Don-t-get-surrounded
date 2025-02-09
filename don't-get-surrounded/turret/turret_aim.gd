@@ -56,6 +56,9 @@ func _on_detection_area_area_shape_exited(area_rid, area, area_shape_index, loca
 
 
 func _on_timer_timeout():
+	if (GlobalData.power < 0):
+		return;
+	GlobalData.power -= 1;
 	timer.wait_time = weapon_reload;
 	if (!is_target_shootable):
 		timer.stop;

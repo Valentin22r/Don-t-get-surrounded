@@ -57,7 +57,7 @@ func _on_timer_timeout():
 			hp == 500;
 	if (hp < 0):
 		return;
-	GlobalData.power -= upgrade_count;
+	GlobalData.power -= upgrade_count + 1;
 	act_debt += (1 + (0.1 * workspeed) + (0.5) * upgrade_count);
 	DepartureChanged.emit()
 	pass # Replace with function body.

@@ -61,7 +61,7 @@ func _on_area_2d_body_exited(body):
 
 func create_resource():
 	if (_resource == RESOURCE.BULLETS):
-		GlobalData.ammo += 200;
+		GlobalData.ammo += 175;
 		return;
 	if (_resource == RESOURCE.DRONES):
 		var instance_drone = drone.instantiate()
@@ -80,7 +80,7 @@ func _on_timer_timeout():
 			hp == 100;
 	if (hp < 0):
 		return;
-	GlobalData.power -= upgrade_count;
+	GlobalData.power -= upgrade_count + 1;
 	ongoing_construction += (1 + (0.1 * workspeed) + (0.5 * upgrade_count));
 	if (construction_time != 0 && ongoing_construction >= construction_time):
 		ongoing_construction -= construction_time;

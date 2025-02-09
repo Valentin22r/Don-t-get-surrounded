@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://qkm5wwp2rcmx"]
 
 [ext_resource type="Script" path="res://turret/player.gd" id="1_w7i2s"]
-[ext_resource type="Texture2D" uid="uid://c6babccsrv1px" path="res://asset/player.png" id="3_aoqmg"]
+[ext_resource type="Texture2D" uid="uid://omyah26njo6g" path="res://sprites/Sprite_BTO-02.png" id="2_o774h"]
 [ext_resource type="Script" path="res://turret/hud.gd" id="3_koc7y"]
 [ext_resource type="PackedScene" uid="uid://cmhshkl0kcfp7" path="res://Pause/pause.tscn" id="4_ocaho"]
 [ext_resource type="Texture2D" uid="uid://c2is0j0oqushk" path="res://sprites/sprite_manufacturing.png" id="5_20pcj"]
@@ -30,8 +30,8 @@ scale = Vector2(1.63, 1.63)
 shape = SubResource("RectangleShape2D_56av3")
 
 [node name="Player" type="Sprite2D" parent="."]
-scale = Vector2(0.084, 0.089)
-texture = ExtResource("3_aoqmg")
+scale = Vector2(0.429, 0.455)
+texture = ExtResource("2_o774h")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(1.55338, 1.69838)

@@ -11,4 +11,6 @@ var kill = 0
 var basic_enemy_life = 10
 var big_enemy_life = 50
 
+var is_in_tutorial: bool = false
+
 var sound = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://waqt1sgk861m"]
+[gd_scene load_steps=14 format=3 uid="uid://waqt1sgk861m"]
 
 [ext_resource type="AudioStream" uid="uid://dyytv0nuuaufy" path="res://asset/apocalypse-161568.mp3" id="1_7gxy8"]
 [ext_resource type="PackedScene" uid="uid://bm0sc8rpmwfly" path="res://Base/Base.tscn" id="1_vb7m2"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cx38ynxx7ba30" path="res://buildings/generator.tscn" id="9_tdujp"]
 [ext_resource type="PackedScene" uid="uid://drymjmt1kmu3q" path="res://Wall/Wall.tscn" id="10_lkt6x"]
 [ext_resource type="PackedScene" uid="uid://6njnwgjsdibq" path="res://buildings/ship_launchpad.tscn" id="10_yosqr"]
+[ext_resource type="PackedScene" uid="uid://b61coeh4educi" path="res://drone/BTO-01.tscn" id="12_3dsfq"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_qgd1f"]
 vertices = PackedVector2Array(2355.42, -2215.48, 2525.42, 1094.21, -1335.46, 815.727, -1206.28, -1472.74, 279.5, -2570.42)
@@ -165,6 +166,9 @@ rand_y = -750
 
 [node name="Timer" type="Timer" parent="Spawner4"]
 autostart = true
+
+[node name="BTO-01" parent="." instance=ExtResource("12_3dsfq")]
+position = Vector2(40, 157)
 
 [connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="Spawner2/Timer" to="Spawner2" method="_on_timer_timeout"]

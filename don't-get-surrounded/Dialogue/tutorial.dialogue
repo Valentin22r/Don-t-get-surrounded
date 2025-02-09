@@ -1,0 +1,33 @@
+~ start
+set GlobalData.is_in_tutorial = true
+BTO-01: Hello Commander BTO-02.
+~ doc
+BTO-01: What do you want to know about this base ?
+- Factories
+	BTO-01: Factories are endlessly working to defend the base. As such, they can create ammo, drones and upgrades.
+	BTO-01: Ammo is necessary for turrets. if you run out of ammo, turrets will stop firing !
+	BTO-01: Drones can boost your buildings' production rate when close to it. Interacting with a drone will make it wait for your call !
+	BTO-01: They can also repair the buildings and walls in exchange of energy, and accelerate the Launchpad preparation.
+	BTO-01: Upgrades will permanently boost the chosen building's stats. Be wary, it will also boost its energy needs !
+- Powerplant
+	BTO-01: Powerplants delivers you energy.
+	BTO-01: Energy is used in turrets, as well as factories and launchpad.
+	BTO-01: having a negative amount of energy will make you base defenceless, so be careful !
+- Turrets
+	BTO-01: Turrets shoots organic beings.
+	BTO-01: They are here to protect the base from incoming invasions.
+- LaunchPad
+	BTO-01: This is the Launchpad.
+	BTO-01: It contains the last non-hostile organinc beings of the area, and thus needs to be send in space !
+	BTO-01: Launch it to claim victory !
+- Nothing
+	BTO-01: Good luck Commander !
+	set GlobalData.is_in_tutorial = false
+	=> END
+BTO-01: Need to know something else ?
+- Yes => doc
+- No
+	BTO-01: Good luck Commander ! 
+	set GlobalData.is_in_tutorial = false
+	=> END
+=> END
