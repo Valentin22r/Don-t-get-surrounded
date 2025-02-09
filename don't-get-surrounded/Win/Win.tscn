@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://7ptqui75qglb"]
+[gd_scene load_steps=11 format=3 uid="uid://7ptqui75qglb"]
 
 [ext_resource type="Texture2D" uid="uid://db2uskkg72xk4" path="res://asset/map.png" id="1_u6okp"]
 [ext_resource type="PackedScene" uid="uid://c3qwlyxxcjoy2" path="res://turret/turret.tscn" id="2_3jo6x"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://dccpvx7gjkbr2" path="res://sprites/body_03.png" id="6_n6ddu"]
 [ext_resource type="Script" path="res://Win/win_animation.gd" id="7_4fnxi"]
 [ext_resource type="Texture2D" uid="uid://dq7gec63svgkb" path="res://asset/sky.jpeg" id="8_t1v41"]
-[ext_resource type="PackedScene" uid="uid://d0apd7evulb3c" path="res://drone/drone_=>.tscn" id="9_38llk"]
 [ext_resource type="Texture2D" uid="uid://453wyc3a7vc3" path="res://asset/space.jpg" id="9_nq67a"]
 
 [node name="Win" type="Node2D"]
@@ -34,10 +33,6 @@ texture = ExtResource("1_u6okp")
 
 [node name="turret" parent="map" instance=ExtResource("2_3jo6x")]
 position = Vector2(711, -300)
-
-[node name="Drone =>" parent="map" instance=ExtResource("9_38llk")]
-position = Vector2(-28, 198)
-scale = Vector2(3.94, 3.82845)
 
 [node name="Usine4" parent="map" instance=ExtResource("3_w6vdj")]
 position = Vector2(350, 350)

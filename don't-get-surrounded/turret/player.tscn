@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://qkm5wwp2rcmx"]
+[gd_scene load_steps=10 format=3 uid="uid://qkm5wwp2rcmx"]
 
 [ext_resource type="Script" path="res://turret/player.gd" id="1_w7i2s"]
 [ext_resource type="Texture2D" uid="uid://c6babccsrv1px" path="res://asset/player.png" id="3_aoqmg"]
 [ext_resource type="Script" path="res://turret/hud.gd" id="3_koc7y"]
 [ext_resource type="PackedScene" uid="uid://cmhshkl0kcfp7" path="res://Pause/pause.tscn" id="4_ocaho"]
+[ext_resource type="Texture2D" uid="uid://c2is0j0oqushk" path="res://sprites/sprite_manufacturing.png" id="5_20pcj"]
+[ext_resource type="Texture2D" uid="uid://bbn1sfkfb1gcf" path="res://sprites/sprite_generator.png" id="6_tb5x7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dc6b2"]
 
@@ -115,3 +117,21 @@ offset_top = -176.371
 offset_right = -291.983
 offset_bottom = -176.371
 scale = Vector2(0.419115, 0.439774)
+
+[node name="SpriteManufacturing" type="Sprite2D" parent="."]
+position = Vector2(-157.806, -73.4177)
+scale = Vector2(0.50879, 0.5)
+texture = ExtResource("5_20pcj")
+hframes = 3
+
+[node name="SpriteManufacturing3" type="Sprite2D" parent="."]
+position = Vector2(-157.806, -102.954)
+scale = Vector2(0.50879, 0.5)
+texture = ExtResource("5_20pcj")
+hframes = 3
+frame = 2
+
+[node name="SpriteGenerator" type="Sprite2D" parent="."]
+position = Vector2(-157.806, -86.9198)
+scale = Vector2(0.368143, 0.368143)
+texture = ExtResource("6_tb5x7")

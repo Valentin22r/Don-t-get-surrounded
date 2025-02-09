@@ -1,0 +1,85 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6elhyp6p3362"]
+
+[ext_resource type="Script" path="res://Intro/Intro.gd" id="1_w26v8"]
+[ext_resource type="Texture2D" uid="uid://s5c80ntcre1l" path="res://asset/setting.webp" id="2_udfra"]
+[ext_resource type="FontFile" uid="uid://btuacg6r7j45d" path="res://asset/F-Rotten_Font.ttf" id="3_g3x5i"]
+[ext_resource type="AudioStream" uid="uid://dusk3q31yymdu" path="res://asset/adriantnt_u_click.mp3" id="4_qgym4"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w26v8")
+
+[node name="Setting" type="Sprite2D" parent="."]
+position = Vector2(572, 321)
+scale = Vector2(0.604167, 0.5125)
+texture = ExtResource("2_udfra")
+
+[node name="PLAY" type="Button" parent="."]
+layout_mode = 0
+offset_left = 944.0
+offset_top = 594.0
+offset_right = 1141.0
+offset_bottom = 640.0
+theme_override_fonts/font = ExtResource("3_g3x5i")
+theme_override_font_sizes/font_size = 30
+text = "LET'S GO"
+
+[node name="click_buttons" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_qgym4")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 29.0
+offset_right = 678.0
+offset_bottom = 238.0
+theme_override_colors/default_color = Color(0.137255, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_g3x5i")
+theme_override_font_sizes/normal_font_size = 120
+text = "INTRO"
+scroll_active = false
+autowrap_mode = 2
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 23.0
+offset_right = 674.0
+offset_bottom = 232.0
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_g3x5i")
+theme_override_font_sizes/normal_font_size = 120
+text = "INTRO"
+scroll_active = false
+autowrap_mode = 2
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+offset_left = 23.0
+offset_top = 154.0
+offset_right = 1110.0
+offset_bottom = 576.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("3_g3x5i")
+theme_override_font_sizes/normal_font_size = 30
+text = "Captain’s Log – Day 17
+
+The Nova Prime is almost ready for takeoff. Almost. The reactor needs just a few more hours to reach full power, but we might not have that long. Every night, the undead swarm grows larger, their rotting hands clawing at the barricades, their hollow eyes locked onto us like we’re the last meal in the universe.
+
+We lost two men yesterday—Darius and Finch. They went to secure the southern perimeter. Only their screams came back. Supplies are running low, ammo even more so. If we don’t hold the line until sunrise, there won’t be anyone left to board the ship.
+
+The alarms are blaring again. The wind carries their growls through the dark. This is it. One last fight. One last chance. If we fail, the colony dies here. If we hold… we leave this nightmare behind forever."
+scroll_active = false
+autowrap_mode = 2
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[connection signal="pressed" from="PLAY" to="." method="_on_back_button_pressed"]
