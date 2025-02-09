@@ -26,7 +26,7 @@ timer = NodePath("Timer")
 [node name="shoot_sound" type="AudioStreamPlayer2D" parent="MeshInstance2D"]
 stream = ExtResource("4_v4rqa")
 volume_db = -5.535
-max_distance = 1000.0
+max_distance = 500.0
 attenuation = 3.13834
 
 [node name="detection_area" type="Area2D" parent="MeshInstance2D"]
