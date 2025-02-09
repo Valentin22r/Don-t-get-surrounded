@@ -32,11 +32,5 @@ shape = SubResource("RectangleShape2D_1pum6")
 wait_time = 0.5
 autostart = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = -27.0
-offset_top = -19.0
-offset_right = 20.0
-offset_bottom = 10.0
-
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="Hit_rate" to="." method="_on_hit_rate_timeout"]

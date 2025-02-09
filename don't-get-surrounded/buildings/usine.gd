@@ -62,6 +62,7 @@ func create_resource():
 		return;
 	GlobalData.upgrade += 1;
 func _on_timer_timeout():
+	GlobalData.power -= 1;
 	ongoing_construction += (1 + (0.1 * workspeed));
 	if (construction_time != 0 && ongoing_construction >= construction_time):
 		ongoing_construction -= construction_time;

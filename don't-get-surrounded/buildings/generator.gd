@@ -2,7 +2,7 @@ extends StaticBody2D
 
 @export var timer: Timer
 
-var generate: int = 1;
+var generate: int = 3;
 var is_player_around: bool = false
 
 var workspeed: int = 0
@@ -14,7 +14,7 @@ var life: int = 100
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	is_player_around = false
-	generate = 1
+	generate = 3
 	add_to_group("building")
 	pass # Replace with function body.
 

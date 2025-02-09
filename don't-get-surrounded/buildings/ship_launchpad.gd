@@ -43,6 +43,7 @@ func _on_area_2d_body_exited(body):
 		is_player_around = false;
 
 func _on_timer_timeout():
+	GlobalData.power -= 1;
 	act_debt += (1 + (0.1 * workspeed));
 	DepartureChanged.emit()
 	pass # Replace with function body.

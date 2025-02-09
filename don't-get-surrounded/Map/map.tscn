@@ -19,14 +19,12 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(277, -2581, -1216, -147
 [node name="Map" type="Node2D"]
 
 [node name="SpriteMap" type="Sprite2D" parent="."]
-visible = false
 show_behind_parent = true
 position = Vector2(-13, -9.99998)
 scale = Vector2(2.81747, 2.50781)
 texture = ExtResource("8_cehod")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-visible = false
 position = Vector2(-458, 881)
 navigation_polygon = SubResource("NavigationPolygon_qgd1f")
 
@@ -45,6 +43,7 @@ rotation = -0.436332
 
 [node name="Drone =>" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_hpf4u")]
 position = Vector2(-28, 198)
+scale = Vector2(3.94, 3.82845)
 player = NodePath("../test_mob")
 
 [node name="Usine4" parent="." instance=ExtResource("7_4iyt2")]
@@ -116,31 +115,31 @@ rotation = 3.14159
 scale = Vector2(1, 40)
 
 [node name="turret2" parent="." instance=ExtResource("4_48m3y")]
-position = Vector2(711, 290)
-rotation = -0.436332
+position = Vector2(699.205, 289.61)
+rotation = 0.521853
 
 [node name="turret3" parent="." instance=ExtResource("4_48m3y")]
-position = Vector2(290, -715)
-rotation = -0.436332
+position = Vector2(285.895, -709.23)
+rotation = -1.27409
 
 [node name="turret4" parent="." instance=ExtResource("4_48m3y")]
-position = Vector2(-300, -713)
-rotation = -0.436332
+position = Vector2(-293.14, -704.175)
+rotation = -1.87274
 
 [node name="turret5" parent="." instance=ExtResource("4_48m3y")]
-position = Vector2(-713, -298)
-rotation = -0.436332
+position = Vector2(-703.005, -294.025)
+rotation = 3.51335
 
 [node name="turret6" parent="." instance=ExtResource("4_48m3y")]
-position = Vector2(-715, 293)
-rotation = -0.436332
+position = Vector2(-700.63, 288.995)
+rotation = 2.79427
 
 [node name="turret7" parent="." instance=ExtResource("4_48m3y")]
-position = Vector2(-293, 710)
-rotation = -0.436332
+position = Vector2(-293, 695.72)
+rotation = 1.95651
 
 [node name="turret8" parent="." instance=ExtResource("4_48m3y")]
-position = Vector2(300, 702)
-rotation = -0.436332
+position = Vector2(292.475, 695.115)
+rotation = 1.11876
 
 [connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_timer_timeout"]
