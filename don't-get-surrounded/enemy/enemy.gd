@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 35
+var speed = 200
 var life = GlobalData.basic_enemy_life
 var hp = -1
 var death_animation_repetition = 2
@@ -14,12 +14,10 @@ func _ready() -> void:
 	$Area2D.add_to_group("enemy")
 	makepath()
 
-func _process(delta: float) -> void:
+func _on_timer_move_timeout() -> void:
 	if (life <= 0 and death_time >= 0):
 		death_time -= 1
 		death()
-
-func _physics_process(delta: float) -> void:
 	$Sprite2D.look_at(base.position)
 	$Area2D.look_at(base.position)
 	$CollisionShape2D.look_at(base.position)

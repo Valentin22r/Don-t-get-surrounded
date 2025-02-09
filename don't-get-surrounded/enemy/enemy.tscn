@@ -48,7 +48,12 @@ texture = ExtResource("3_u0odi")
 [node name="TimerAttack" type="Timer" parent="."]
 autostart = true
 
+[node name="TimerMove" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="TimerDeath" to="." method="_on_timer_death_timeout"]
 [connection signal="timeout" from="TimerAttack" to="." method="_on_timer_attack_timeout"]
+[connection signal="timeout" from="TimerMove" to="." method="_on_timer_move_timeout"]
