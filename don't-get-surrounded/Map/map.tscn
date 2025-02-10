@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bm0sc8rpmwfly" path="res://Base/Base.tscn" id="1_vb7m2"]
 [ext_resource type="Script" path="res://Map/spawner.gd" id="3_6u2hr"]
 [ext_resource type="PackedScene" uid="uid://c3qwlyxxcjoy2" path="res://turret/turret.tscn" id="4_48m3y"]
-[ext_resource type="PackedScene" uid="uid://d0apd7evulb3c" path="res://drone/drone_=>.tscn" id="5_hpf4u"]
+[ext_resource type="PackedScene" uid="uid://d0apd7evulb3c" path="res://drone/drone.tscn" id="5_hpf4u"]
 [ext_resource type="PackedScene" uid="uid://qkm5wwp2rcmx" path="res://turret/player.tscn" id="6_c1trm"]
 [ext_resource type="PackedScene" uid="uid://brmnx1pbw61aa" path="res://buildings/usine.tscn" id="7_4iyt2"]
 [ext_resource type="Texture2D" uid="uid://db2uskkg72xk4" path="res://asset/map.png" id="8_cehod"]
@@ -49,7 +49,7 @@ autostart = true
 [node name="turret" parent="." instance=ExtResource("4_48m3y")]
 position = Vector2(711, -300)
 
-[node name="Drone =>" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_hpf4u")]
+[node name="Drone" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_hpf4u")]
 position = Vector2(-28, 198)
 scale = Vector2(3.94, 3.82845)
 player = NodePath("../test_mob")
